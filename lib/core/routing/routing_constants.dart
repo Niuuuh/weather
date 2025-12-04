@@ -6,8 +6,8 @@ enum Routes {
 }
 
 abstract class PathSegments {
-  static const weather = PathSegment('locations');
-  static const location = PathSegment('location');
+  static const locations = PathSegment('locations');
+  static const weather = PathSegment('weather');
 }
 
 abstract class PathParameters {

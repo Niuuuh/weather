@@ -5,7 +5,7 @@ import '../models/weather_response_model.dart';
 
 class WeatherApi {
   static const baseUrl = "https://api.brightsky.dev";
-  static const weatherEndpoint = "/weather";
+  static const weatherEndpoint = "/current_weather";
 
   final dio = Dio(
     BaseOptions(

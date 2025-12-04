@@ -1,0 +1,19 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:weather/features/location/data/locations.dart';
+import 'package:weather/features/weather/data/repository/weather_repository.dart';
+import 'package:weather/features/weather/data/sources/weather_api.dart';
+
+void main() {
+  test("weather api", () async {
+    final weatherApi = WeatherApi();
+    final weatherRepository = WeatherRepository(weatherApi: weatherApi);
+
+    final weather = await weatherRepository.getWeather(
+      latitude: Locations.karlsruhe.latitude,
+      longitude: Locations.karlsruhe.longitude,
+    );
+
+    expect(weather.temperature, isNotNull);
+    expect(weather.distance, isNotNull);
+  });
+}

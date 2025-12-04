@@ -8,10 +8,10 @@ import '../../features/weather/ui/pages/location_detail_page.dart';
 
 GoRouter router() {
   return GoRouter(
-    initialLocation: RoutePath.absolute([PathSegments.weather]),
+    initialLocation: RoutePath.absolute([PathSegments.locations]),
     routes: [
       GoRoute(
-        path: RoutePath.absolute([PathSegments.weather]),
+        path: RoutePath.absolute([PathSegments.locations]),
         name: Routes.locations.name,
         builder: (context, state) {
           return LocationsPage();
