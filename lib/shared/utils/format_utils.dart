@@ -1,9 +1,9 @@
 abstract class FormatUtils {
-  static String formatCelsius(double number, {int decimals = 1}) {
-    return "${number.toStringAsFixed(decimals)}°C";
-  }
-
-  static String formatFahrenheit(double number, {int decimals = 1}) {
-    return "${number.toStringAsFixed(decimals)}°F";
+  static String? formatNumber(num? number, {int? decimals}) {
+    if (number == null) return null;
+    if (decimals != null) {
+      return number.toStringAsFixed(decimals);
+    }
+    return number.toString();
   }
 }

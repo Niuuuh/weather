@@ -11,9 +11,11 @@ class LocationListTile extends ConsumerWidget {
   const LocationListTile({
     super.key,
     required this.location,
+    this.onTap,
   });
 
   final LocationEntity location;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,8 +30,9 @@ class LocationListTile extends ConsumerWidget {
         return ListTile(
           title: Text(location.name),
           subtitle: weather.temperature != null
-            ? Text(FormatUtils.formatCelsius(weather.temperature!))
+            ? Text("${FormatUtils.formatNumber(weather.temperature!, decimals: 1)}°C")
             : null,
+          onTap: onTap,
         );
       },
       orElse: () {

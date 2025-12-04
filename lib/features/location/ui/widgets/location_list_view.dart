@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:weather/core/routing/navigation_helper.dart';
 
 import '../providers/location_providers.dart';
 import 'location_list_tile.dart';
@@ -14,7 +15,12 @@ class LocationListView extends ConsumerWidget {
       itemCount: locations.length,
       itemBuilder: (context, index) {
         final location = locations[index];
-        return LocationListTile(location: location);
+        return LocationListTile(
+          location: location,
+          onTap: () {
+            context.goLocationDetail(locationId: location.id);
+          },
+        );
       },
     );
   }
