@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:weather/shared/utils/format_utils.dart';
 
+import '../../../../shared/providers/shared_providers.dart';
 import '../../../location/ui/providers/location_providers.dart';
 import '../providers/weather_providers.dart';
 
@@ -17,6 +17,9 @@ class LocationDetailPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final location = ref.watch(locationProvider(locationId));
     final asyncWeather = ref.watch(weatherProvider(location));
+    final temperature = ref.watch(temperatureProvider(location)).valueOrNull;
+    final unit = ref.watch(temperatureUnitProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(location.name),
@@ -25,12 +28,12 @@ class LocationDetailPage extends ConsumerWidget {
         child: ListView(
           children: asyncWeather.maybeWhen(
             data: (weather) => [
-              if (weather.temperature != null)
-                Text("Temperature: ${FormatUtils.formatNumber(weather.temperature!, decimals: 1)}°C"),
+              if (temperature != null)
+                Text("Temperature: ${temperature.toStringAsFixed(1)}${unit.symbol}"),
               if (weather.relativeHumidity != null)
-                Text("Humidity: ${FormatUtils.formatNumber(weather.relativeHumidity!)}%"),
+                Text("Humidity: ${weather.relativeHumidity}%"),
               if (weather.distance != null)
-                Text("Distance: ${FormatUtils.formatNumber(weather.distance!)} m"),
+                Text("Distance: ${weather.distance} m"),
             ],
             orElse: () => [],
           ),

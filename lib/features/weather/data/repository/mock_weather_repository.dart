@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:weather/features/weather/data/repository/weather_repository.dart';
-import 'package:weather/features/weather/domain/errors/weather_error.dart';
 
 import '../../domain/entities/weather_entity.dart';
 import '../sources/weather_api.dart';

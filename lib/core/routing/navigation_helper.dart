@@ -15,4 +15,8 @@ extension NavigationHelper on BuildContext {
       },
     );
   }
+
+  void goSettings() {
+    pushNamed(Routes.settings.name);
+  }
 }

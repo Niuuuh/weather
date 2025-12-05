@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/features/location/domain/entities/location_entity.dart';
 import 'package:weather/features/weather/ui/providers/weather_providers.dart';
 import 'package:weather/shared/services/error_service.dart';
-import 'package:weather/shared/utils/format_utils.dart';
 
+import '../../../../shared/providers/shared_providers.dart';
 import '../../../../shared/widgets/bone.dart';
 
 class LocationListTile extends ConsumerWidget {
@@ -25,12 +25,15 @@ class LocationListTile extends ConsumerWidget {
       }
     });
 
-    return ref.watch(weatherProvider(location)).maybeWhen(
-      data: (weather) {
+    final asyncTemperature = ref.watch(temperatureProvider(location));
+    final unit = ref.watch(temperatureUnitProvider);
+
+    return asyncTemperature.maybeWhen(
+      data: (temperature) {
         return ListTile(
           title: Text(location.name),
-          subtitle: weather.temperature != null
-            ? Text("${FormatUtils.formatNumber(weather.temperature!, decimals: 1)}°C")
+          subtitle: temperature != null
+            ? Text("${temperature.toStringAsFixed(1)}${unit.symbol}")
             : null,
           onTap: onTap,
         );
