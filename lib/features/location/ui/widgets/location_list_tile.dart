@@ -32,7 +32,10 @@ class LocationListTile extends ConsumerWidget {
       data: (weather) {
         final temperature = ref.watch(temperatureProvider(weather.temperature));
         return ListTile(
-          title: Text(location.name),
+          title: location.map(
+            current: (_) => Text("Current Location"),
+            static: (staticLocation) => Text(staticLocation.name),
+          ),
           subtitle: temperature != null
             ? Text("${temperature.toStringAsFixed(1)}${unit.symbol}")
             : null,
@@ -41,7 +44,10 @@ class LocationListTile extends ConsumerWidget {
       },
       orElse: () {
         return ListTile(
-          title: Text(location.name),
+          title: location.map(
+            current: (_) => Text("Current Location"),
+            static: (staticLocation) => Text(staticLocation.name),
+          ),
           subtitle: Align(
             alignment: Alignment.centerLeft,
             child: Bone(width: 50, height: 8),

@@ -15,3 +15,11 @@ abstract class PathSegments {
 abstract class PathParameters {
   static const locationId = PathParameter('locationId');
 }
+
+abstract class QueryParameters {
+  static const lat = 'lat';
+  static const lon = 'lon';
+  static const id = 'id';
+}
+
+typedef QueryParameter = String;

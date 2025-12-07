@@ -18,7 +18,7 @@ class LocationListView extends ConsumerWidget {
         return LocationListTile(
           location: location,
           onTap: () {
-            context.goLocationDetail(locationId: location.id);
+            context.goLocationDetail(location: location);
           },
         );
       },

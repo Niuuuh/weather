@@ -19,14 +19,13 @@ GoRouter router() {
         },
         routes: [
           GoRoute(
-            path: RoutePath.relative([
-              PathParameters.locationId,
-              PathSegments.weather,
-            ]),
+            path: RoutePath.relative([PathSegments.weather]),
             name: Routes.locationDetail.name,
             builder: (context, state) {
               return LocationDetailPage(
-                locationId: state.pathParameter(PathParameters.locationId),
+                latitude: state.queryParameter(QueryParameters.lat),
+                longitude: state.queryParameter(QueryParameters.lon),
+                locationId: state.queryParameter(QueryParameters.id),
               );
             },
           ),

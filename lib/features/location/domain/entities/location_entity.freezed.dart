@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LocationEntity implements DiagnosticableTreeMixin {
 
- String get id; String get name; double get latitude; double get longitude;
+ double get latitude; double get longitude;
 /// Create a copy of LocationEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,21 +26,21 @@ $LocationEntityCopyWith<LocationEntity> get copyWith => _$LocationEntityCopyWith
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'LocationEntity'))
-    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude));
+    ..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,latitude,longitude);
+int get hashCode => Object.hash(runtimeType,latitude,longitude);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LocationEntity(id: $id, name: $name, latitude: $latitude, longitude: $longitude)';
+  return 'LocationEntity(latitude: $latitude, longitude: $longitude)';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $LocationEntityCopyWith<$Res>  {
   factory $LocationEntityCopyWith(LocationEntity value, $Res Function(LocationEntity) _then) = _$LocationEntityCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, double latitude, double longitude
+ double latitude, double longitude
 });
 
 
@@ -68,11 +68,9 @@ class _$LocationEntityCopyWithImpl<$Res>
 
 /// Create a copy of LocationEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? latitude = null,Object? longitude = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? latitude = null,Object? longitude = null,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double,
   ));
@@ -95,11 +93,12 @@ extension LocationEntityPatterns on LocationEntity {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _LocationEntity value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( CurrentLocationEntity value)?  current,TResult Function( StaticLocationEntity value)?  static,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _LocationEntity() when $default != null:
-return $default(_that);case _:
+case CurrentLocationEntity() when current != null:
+return current(_that);case StaticLocationEntity() when static != null:
+return static(_that);case _:
   return orElse();
 
 }
@@ -117,14 +116,12 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _LocationEntity value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( CurrentLocationEntity value)  current,required TResult Function( StaticLocationEntity value)  static,}){
 final _that = this;
 switch (_that) {
-case _LocationEntity():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+case CurrentLocationEntity():
+return current(_that);case StaticLocationEntity():
+return static(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -138,11 +135,12 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _LocationEntity value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( CurrentLocationEntity value)?  current,TResult? Function( StaticLocationEntity value)?  static,}){
 final _that = this;
 switch (_that) {
-case _LocationEntity() when $default != null:
-return $default(_that);case _:
+case CurrentLocationEntity() when current != null:
+return current(_that);case StaticLocationEntity() when static != null:
+return static(_that);case _:
   return null;
 
 }
@@ -159,10 +157,11 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  double latitude,  double longitude)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( double latitude,  double longitude)?  current,TResult Function( double latitude,  double longitude,  String id,  String name)?  static,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _LocationEntity() when $default != null:
-return $default(_that.id,_that.name,_that.latitude,_that.longitude);case _:
+case CurrentLocationEntity() when current != null:
+return current(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
+return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
   return orElse();
 
 }
@@ -180,13 +179,11 @@ return $default(_that.id,_that.name,_that.latitude,_that.longitude);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  double latitude,  double longitude)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( double latitude,  double longitude)  current,required TResult Function( double latitude,  double longitude,  String id,  String name)  static,}) {final _that = this;
 switch (_that) {
-case _LocationEntity():
-return $default(_that.id,_that.name,_that.latitude,_that.longitude);case _:
-  throw StateError('Unexpected subclass');
-
-}
+case CurrentLocationEntity():
+return current(_that.latitude,_that.longitude);case StaticLocationEntity():
+return static(_that.latitude,_that.longitude,_that.id,_that.name);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -200,10 +197,11 @@ return $default(_that.id,_that.name,_that.latitude,_that.longitude);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  double latitude,  double longitude)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( double latitude,  double longitude)?  current,TResult? Function( double latitude,  double longitude,  String id,  String name)?  static,}) {final _that = this;
 switch (_that) {
-case _LocationEntity() when $default != null:
-return $default(_that.id,_that.name,_that.latitude,_that.longitude);case _:
+case CurrentLocationEntity() when current != null:
+return current(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
+return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
   return null;
 
 }
@@ -214,12 +212,10 @@ return $default(_that.id,_that.name,_that.latitude,_that.longitude);case _:
 /// @nodoc
 
 
-class _LocationEntity with DiagnosticableTreeMixin implements LocationEntity {
-  const _LocationEntity({required this.id, required this.name, required this.latitude, required this.longitude});
+class CurrentLocationEntity with DiagnosticableTreeMixin implements LocationEntity {
+  const CurrentLocationEntity({required this.latitude, required this.longitude});
   
 
-@override final  String id;
-@override final  String name;
 @override final  double latitude;
 @override final  double longitude;
 
@@ -227,39 +223,39 @@ class _LocationEntity with DiagnosticableTreeMixin implements LocationEntity {
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$LocationEntityCopyWith<_LocationEntity> get copyWith => __$LocationEntityCopyWithImpl<_LocationEntity>(this, _$identity);
+$CurrentLocationEntityCopyWith<CurrentLocationEntity> get copyWith => _$CurrentLocationEntityCopyWithImpl<CurrentLocationEntity>(this, _$identity);
 
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
-    ..add(DiagnosticsProperty('type', 'LocationEntity'))
-    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude));
+    ..add(DiagnosticsProperty('type', 'LocationEntity.current'))
+    ..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LocationEntity&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CurrentLocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,id,name,latitude,longitude);
+int get hashCode => Object.hash(runtimeType,latitude,longitude);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LocationEntity(id: $id, name: $name, latitude: $latitude, longitude: $longitude)';
+  return 'LocationEntity.current(latitude: $latitude, longitude: $longitude)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$LocationEntityCopyWith<$Res> implements $LocationEntityCopyWith<$Res> {
-  factory _$LocationEntityCopyWith(_LocationEntity value, $Res Function(_LocationEntity) _then) = __$LocationEntityCopyWithImpl;
+abstract mixin class $CurrentLocationEntityCopyWith<$Res> implements $LocationEntityCopyWith<$Res> {
+  factory $CurrentLocationEntityCopyWith(CurrentLocationEntity value, $Res Function(CurrentLocationEntity) _then) = _$CurrentLocationEntityCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, double latitude, double longitude
+ double latitude, double longitude
 });
 
 
@@ -267,22 +263,98 @@ $Res call({
 
 }
 /// @nodoc
-class __$LocationEntityCopyWithImpl<$Res>
-    implements _$LocationEntityCopyWith<$Res> {
-  __$LocationEntityCopyWithImpl(this._self, this._then);
+class _$CurrentLocationEntityCopyWithImpl<$Res>
+    implements $CurrentLocationEntityCopyWith<$Res> {
+  _$CurrentLocationEntityCopyWithImpl(this._self, this._then);
 
-  final _LocationEntity _self;
-  final $Res Function(_LocationEntity) _then;
+  final CurrentLocationEntity _self;
+  final $Res Function(CurrentLocationEntity) _then;
 
 /// Create a copy of LocationEntity
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? latitude = null,Object? longitude = null,}) {
-  return _then(_LocationEntity(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,}) {
+  return _then(CurrentLocationEntity(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class StaticLocationEntity with DiagnosticableTreeMixin implements LocationEntity {
+  const StaticLocationEntity({required this.latitude, required this.longitude, required this.id, required this.name});
+  
+
+@override final  double latitude;
+@override final  double longitude;
+ final  String id;
+ final  String name;
+
+/// Create a copy of LocationEntity
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$StaticLocationEntityCopyWith<StaticLocationEntity> get copyWith => _$StaticLocationEntityCopyWithImpl<StaticLocationEntity>(this, _$identity);
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'LocationEntity.static'))
+    ..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude))..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name));
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StaticLocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,latitude,longitude,id,name);
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'LocationEntity.static(latitude: $latitude, longitude: $longitude, id: $id, name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $StaticLocationEntityCopyWith<$Res> implements $LocationEntityCopyWith<$Res> {
+  factory $StaticLocationEntityCopyWith(StaticLocationEntity value, $Res Function(StaticLocationEntity) _then) = _$StaticLocationEntityCopyWithImpl;
+@override @useResult
+$Res call({
+ double latitude, double longitude, String id, String name
+});
+
+
+
+
+}
+/// @nodoc
+class _$StaticLocationEntityCopyWithImpl<$Res>
+    implements $StaticLocationEntityCopyWith<$Res> {
+  _$StaticLocationEntityCopyWithImpl(this._self, this._then);
+
+  final StaticLocationEntity _self;
+  final $Res Function(StaticLocationEntity) _then;
+
+/// Create a copy of LocationEntity
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,Object? id = null,Object? name = null,}) {
+  return _then(StaticLocationEntity(
+latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
+as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
+as double,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,
   ));
 }
 

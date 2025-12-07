@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:weather/features/location/domain/entities/location_entity.dart';
 
-import '../../../location/ui/providers/location_providers.dart';
 import '../providers/weather_providers.dart';
 
 class PrecipitationListView extends ConsumerWidget {
   const PrecipitationListView({
     super.key,
-    required this.locationId,
+    required this.location,
   });
 
-  final String locationId;
+  final LocationEntity location;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final location = ref.watch(locationProvider(locationId));
     final asyncHourlyWeather = ref.watch(hourlyWeatherProvider(location));
 
     return SizedBox(

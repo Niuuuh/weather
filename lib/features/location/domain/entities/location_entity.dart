@@ -4,11 +4,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'location_entity.freezed.dart';
 
 @freezed
-abstract class LocationEntity with _$LocationEntity {
-  const factory LocationEntity({
-    required String id,
-    required String name,
+sealed class LocationEntity with _$LocationEntity {
+  const factory LocationEntity.current({
     required double latitude,
     required double longitude,
-  }) = _LocationEntity;
+  }) = CurrentLocationEntity;
+
+  const factory LocationEntity.static({
+    required double latitude,
+    required double longitude,
+    required String id,
+    required String name,
+  }) = StaticLocationEntity;
 }
