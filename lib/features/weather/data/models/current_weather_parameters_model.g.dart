@@ -1,18 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'weather_parameters_model.dart';
+part of 'current_weather_parameters_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_WeatherParametersModel _$WeatherParametersModelFromJson(
+_CurrentWeatherParametersModel _$CurrentWeatherParametersModelFromJson(
   Map<String, dynamic> json,
-) => _WeatherParametersModel(
+) => _CurrentWeatherParametersModel(
   lat: (json['lat'] as num).toDouble(),
   lon: (json['lon'] as num).toDouble(),
 );
 
-Map<String, dynamic> _$WeatherParametersModelToJson(
-  _WeatherParametersModel instance,
+Map<String, dynamic> _$CurrentWeatherParametersModelToJson(
+  _CurrentWeatherParametersModel instance,
 ) => <String, dynamic>{'lat': instance.lat, 'lon': instance.lon};

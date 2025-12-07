@@ -16,23 +16,26 @@ final weatherRepositoryProvider = Provider((ref) {
   );
 });
 
-final weatherProvider = FutureProvider.family((ref, LocationEntity location) {
-  return ref.read(weatherRepositoryProvider).getWeather(
+final currentWeatherProvider = FutureProvider.family((ref, LocationEntity location) {
+  return ref.read(weatherRepositoryProvider).getCurrentWeather(
     latitude: location.latitude,
     longitude: location.longitude,
   );
 });
 
-final temperatureProvider = Provider.family((ref, LocationEntity location) {
-  final asyncWeather = ref.watch(weatherProvider(location));
+final temperatureProvider = Provider.family.autoDispose((ref, double? celsius) {
+  if (celsius == null) return null;
   final unit = ref.watch(temperatureUnitProvider);
+  return switch (unit) {
+    TemperatureUnit.celsius => celsius,
+    TemperatureUnit.fahrenheit => ConversionUtils.celsiusToFahrenheit(celsius),
+  };
+});
 
-  return asyncWeather.whenData((weather) {
-    final temperature = weather.temperature;
-    if (temperature == null) return null;
-    return switch (unit) {
-      TemperatureUnit.celsius => temperature,
-      TemperatureUnit.fahrenheit => ConversionUtils.celsiusToFahrenheit(temperature),
-    };
-  });
+final hourlyWeatherProvider = FutureProvider.family((ref, LocationEntity location) {
+  return ref.read(weatherRepositoryProvider).getHourlyWeather(
+    latitude: location.latitude,
+    longitude: location.longitude,
+    date: DateTime.now(),
+  );
 });

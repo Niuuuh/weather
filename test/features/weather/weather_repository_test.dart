@@ -8,7 +8,7 @@ void main() {
     final weatherApi = WeatherApi();
     final weatherRepository = WeatherRepository(weatherApi: weatherApi);
 
-    final weather = await weatherRepository.getWeather(
+    final weather = await weatherRepository.getCurrentWeather(
       latitude: Locations.karlsruhe.latitude,
       longitude: Locations.karlsruhe.longitude,
     );

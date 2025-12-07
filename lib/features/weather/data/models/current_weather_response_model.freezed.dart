@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'weather_response_model.dart';
+part of 'current_weather_response_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,28 +13,28 @@ part of 'weather_response_model.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$WeatherResponseModel implements DiagnosticableTreeMixin {
+mixin _$CurrentWeatherResponseModel implements DiagnosticableTreeMixin {
 
  WeatherModel get weather; List<SourceModel> get sources;
-/// Create a copy of WeatherResponseModel
+/// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$WeatherResponseModelCopyWith<WeatherResponseModel> get copyWith => _$WeatherResponseModelCopyWithImpl<WeatherResponseModel>(this as WeatherResponseModel, _$identity);
+$CurrentWeatherResponseModelCopyWith<CurrentWeatherResponseModel> get copyWith => _$CurrentWeatherResponseModelCopyWithImpl<CurrentWeatherResponseModel>(this as CurrentWeatherResponseModel, _$identity);
 
-  /// Serializes this WeatherResponseModel to a JSON map.
+  /// Serializes this CurrentWeatherResponseModel to a JSON map.
   Map<String, dynamic> toJson();
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
-    ..add(DiagnosticsProperty('type', 'WeatherResponseModel'))
+    ..add(DiagnosticsProperty('type', 'CurrentWeatherResponseModel'))
     ..add(DiagnosticsProperty('weather', weather))..add(DiagnosticsProperty('sources', sources));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WeatherResponseModel&&(identical(other.weather, weather) || other.weather == weather)&&const DeepCollectionEquality().equals(other.sources, sources));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CurrentWeatherResponseModel&&(identical(other.weather, weather) || other.weather == weather)&&const DeepCollectionEquality().equals(other.sources, sources));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -43,15 +43,15 @@ int get hashCode => Object.hash(runtimeType,weather,const DeepCollectionEquality
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'WeatherResponseModel(weather: $weather, sources: $sources)';
+  return 'CurrentWeatherResponseModel(weather: $weather, sources: $sources)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $WeatherResponseModelCopyWith<$Res>  {
-  factory $WeatherResponseModelCopyWith(WeatherResponseModel value, $Res Function(WeatherResponseModel) _then) = _$WeatherResponseModelCopyWithImpl;
+abstract mixin class $CurrentWeatherResponseModelCopyWith<$Res>  {
+  factory $CurrentWeatherResponseModelCopyWith(CurrentWeatherResponseModel value, $Res Function(CurrentWeatherResponseModel) _then) = _$CurrentWeatherResponseModelCopyWithImpl;
 @useResult
 $Res call({
  WeatherModel weather, List<SourceModel> sources
@@ -62,14 +62,14 @@ $WeatherModelCopyWith<$Res> get weather;
 
 }
 /// @nodoc
-class _$WeatherResponseModelCopyWithImpl<$Res>
-    implements $WeatherResponseModelCopyWith<$Res> {
-  _$WeatherResponseModelCopyWithImpl(this._self, this._then);
+class _$CurrentWeatherResponseModelCopyWithImpl<$Res>
+    implements $CurrentWeatherResponseModelCopyWith<$Res> {
+  _$CurrentWeatherResponseModelCopyWithImpl(this._self, this._then);
 
-  final WeatherResponseModel _self;
-  final $Res Function(WeatherResponseModel) _then;
+  final CurrentWeatherResponseModel _self;
+  final $Res Function(CurrentWeatherResponseModel) _then;
 
-/// Create a copy of WeatherResponseModel
+/// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? weather = null,Object? sources = null,}) {
   return _then(_self.copyWith(
@@ -78,7 +78,7 @@ as WeatherModel,sources: null == sources ? _self.sources : sources // ignore: ca
 as List<SourceModel>,
   ));
 }
-/// Create a copy of WeatherResponseModel
+/// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -91,8 +91,8 @@ $WeatherModelCopyWith<$Res> get weather {
 }
 
 
-/// Adds pattern-matching-related methods to [WeatherResponseModel].
-extension WeatherResponseModelPatterns on WeatherResponseModel {
+/// Adds pattern-matching-related methods to [CurrentWeatherResponseModel].
+extension CurrentWeatherResponseModelPatterns on CurrentWeatherResponseModel {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -105,10 +105,10 @@ extension WeatherResponseModelPatterns on WeatherResponseModel {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _WeatherResponseModel value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CurrentWeatherResponseModel value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _WeatherResponseModel() when $default != null:
+case _CurrentWeatherResponseModel() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -127,10 +127,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _WeatherResponseModel value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CurrentWeatherResponseModel value)  $default,){
 final _that = this;
 switch (_that) {
-case _WeatherResponseModel():
+case _CurrentWeatherResponseModel():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -148,10 +148,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _WeatherResponseModel value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CurrentWeatherResponseModel value)?  $default,){
 final _that = this;
 switch (_that) {
-case _WeatherResponseModel() when $default != null:
+case _CurrentWeatherResponseModel() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -171,7 +171,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( WeatherModel weather,  List<SourceModel> sources)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _WeatherResponseModel() when $default != null:
+case _CurrentWeatherResponseModel() when $default != null:
 return $default(_that.weather,_that.sources);case _:
   return orElse();
 
@@ -192,7 +192,7 @@ return $default(_that.weather,_that.sources);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( WeatherModel weather,  List<SourceModel> sources)  $default,) {final _that = this;
 switch (_that) {
-case _WeatherResponseModel():
+case _CurrentWeatherResponseModel():
 return $default(_that.weather,_that.sources);case _:
   throw StateError('Unexpected subclass');
 
@@ -212,7 +212,7 @@ return $default(_that.weather,_that.sources);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( WeatherModel weather,  List<SourceModel> sources)?  $default,) {final _that = this;
 switch (_that) {
-case _WeatherResponseModel() when $default != null:
+case _CurrentWeatherResponseModel() when $default != null:
 return $default(_that.weather,_that.sources);case _:
   return null;
 
@@ -224,9 +224,9 @@ return $default(_that.weather,_that.sources);case _:
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _WeatherResponseModel with DiagnosticableTreeMixin implements WeatherResponseModel {
-  const _WeatherResponseModel({required this.weather, required final  List<SourceModel> sources}): _sources = sources;
-  factory _WeatherResponseModel.fromJson(Map<String, dynamic> json) => _$WeatherResponseModelFromJson(json);
+class _CurrentWeatherResponseModel with DiagnosticableTreeMixin implements CurrentWeatherResponseModel {
+  const _CurrentWeatherResponseModel({required this.weather, required final  List<SourceModel> sources}): _sources = sources;
+  factory _CurrentWeatherResponseModel.fromJson(Map<String, dynamic> json) => _$CurrentWeatherResponseModelFromJson(json);
 
 @override final  WeatherModel weather;
  final  List<SourceModel> _sources;
@@ -237,26 +237,26 @@ class _WeatherResponseModel with DiagnosticableTreeMixin implements WeatherRespo
 }
 
 
-/// Create a copy of WeatherResponseModel
+/// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$WeatherResponseModelCopyWith<_WeatherResponseModel> get copyWith => __$WeatherResponseModelCopyWithImpl<_WeatherResponseModel>(this, _$identity);
+_$CurrentWeatherResponseModelCopyWith<_CurrentWeatherResponseModel> get copyWith => __$CurrentWeatherResponseModelCopyWithImpl<_CurrentWeatherResponseModel>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$WeatherResponseModelToJson(this, );
+  return _$CurrentWeatherResponseModelToJson(this, );
 }
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
-    ..add(DiagnosticsProperty('type', 'WeatherResponseModel'))
+    ..add(DiagnosticsProperty('type', 'CurrentWeatherResponseModel'))
     ..add(DiagnosticsProperty('weather', weather))..add(DiagnosticsProperty('sources', sources));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WeatherResponseModel&&(identical(other.weather, weather) || other.weather == weather)&&const DeepCollectionEquality().equals(other._sources, _sources));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CurrentWeatherResponseModel&&(identical(other.weather, weather) || other.weather == weather)&&const DeepCollectionEquality().equals(other._sources, _sources));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -265,15 +265,15 @@ int get hashCode => Object.hash(runtimeType,weather,const DeepCollectionEquality
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'WeatherResponseModel(weather: $weather, sources: $sources)';
+  return 'CurrentWeatherResponseModel(weather: $weather, sources: $sources)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$WeatherResponseModelCopyWith<$Res> implements $WeatherResponseModelCopyWith<$Res> {
-  factory _$WeatherResponseModelCopyWith(_WeatherResponseModel value, $Res Function(_WeatherResponseModel) _then) = __$WeatherResponseModelCopyWithImpl;
+abstract mixin class _$CurrentWeatherResponseModelCopyWith<$Res> implements $CurrentWeatherResponseModelCopyWith<$Res> {
+  factory _$CurrentWeatherResponseModelCopyWith(_CurrentWeatherResponseModel value, $Res Function(_CurrentWeatherResponseModel) _then) = __$CurrentWeatherResponseModelCopyWithImpl;
 @override @useResult
 $Res call({
  WeatherModel weather, List<SourceModel> sources
@@ -284,24 +284,24 @@ $Res call({
 
 }
 /// @nodoc
-class __$WeatherResponseModelCopyWithImpl<$Res>
-    implements _$WeatherResponseModelCopyWith<$Res> {
-  __$WeatherResponseModelCopyWithImpl(this._self, this._then);
+class __$CurrentWeatherResponseModelCopyWithImpl<$Res>
+    implements _$CurrentWeatherResponseModelCopyWith<$Res> {
+  __$CurrentWeatherResponseModelCopyWithImpl(this._self, this._then);
 
-  final _WeatherResponseModel _self;
-  final $Res Function(_WeatherResponseModel) _then;
+  final _CurrentWeatherResponseModel _self;
+  final $Res Function(_CurrentWeatherResponseModel) _then;
 
-/// Create a copy of WeatherResponseModel
+/// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? weather = null,Object? sources = null,}) {
-  return _then(_WeatherResponseModel(
+  return _then(_CurrentWeatherResponseModel(
 weather: null == weather ? _self.weather : weather // ignore: cast_nullable_to_non_nullable
 as WeatherModel,sources: null == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
 as List<SourceModel>,
   ));
 }
 
-/// Create a copy of WeatherResponseModel
+/// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')

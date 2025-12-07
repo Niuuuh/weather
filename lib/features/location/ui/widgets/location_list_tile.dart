@@ -19,17 +19,18 @@ class LocationListTile extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen(weatherProvider(location), (previous, next) {
+    ref.listen(currentWeatherProvider(location), (previous, next) {
       if (next.hasError) {
         ErrorService.showGenericError(context);
       }
     });
 
-    final asyncTemperature = ref.watch(temperatureProvider(location));
+    final asyncWeather = ref.watch(currentWeatherProvider(location));
     final unit = ref.watch(temperatureUnitProvider);
 
-    return asyncTemperature.maybeWhen(
-      data: (temperature) {
+    return asyncWeather.maybeWhen(
+      data: (weather) {
+        final temperature = ref.watch(temperatureProvider(weather.temperature));
         return ListTile(
           title: Text(location.name),
           subtitle: temperature != null

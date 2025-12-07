@@ -3,17 +3,17 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:weather/features/weather/data/models/source_model.dart';
 import 'package:weather/features/weather/data/models/weather_model.dart';
 
-part 'weather_response_model.freezed.dart';
-part 'weather_response_model.g.dart';
+part 'current_weather_response_model.freezed.dart';
+part 'current_weather_response_model.g.dart';
 
 @freezed
-abstract class WeatherResponseModel with _$WeatherResponseModel {
+abstract class CurrentWeatherResponseModel with _$CurrentWeatherResponseModel {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory WeatherResponseModel({
+  const factory CurrentWeatherResponseModel({
     required WeatherModel weather,
     required List<SourceModel> sources,
-  }) = _WeatherResponseModel;
+  }) = _CurrentWeatherResponseModel;
 
-  factory WeatherResponseModel.fromJson(Map<String, Object?> json) =>
-      _$WeatherResponseModelFromJson(json);
+  factory CurrentWeatherResponseModel.fromJson(Map<String, Object?> json) =>
+      _$CurrentWeatherResponseModelFromJson(json);
 }

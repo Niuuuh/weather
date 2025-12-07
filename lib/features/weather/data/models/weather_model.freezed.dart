@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$WeatherModel implements DiagnosticableTreeMixin {
 
- double? get temperature; double? get precipitation30; int? get relativeHumidity;
+@WeatherDateTimeConverter() DateTime get timestamp; double? get temperature; int? get relativeHumidity; int? get precipitationProbability;
 /// Create a copy of WeatherModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -29,21 +29,21 @@ $WeatherModelCopyWith<WeatherModel> get copyWith => _$WeatherModelCopyWithImpl<W
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'WeatherModel'))
-    ..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('precipitation30', precipitation30))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity));
+    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('precipitationProbability', precipitationProbability));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is WeatherModel&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.precipitation30, precipitation30) || other.precipitation30 == precipitation30)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is WeatherModel&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.precipitationProbability, precipitationProbability) || other.precipitationProbability == precipitationProbability));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,temperature,precipitation30,relativeHumidity);
+int get hashCode => Object.hash(runtimeType,timestamp,temperature,relativeHumidity,precipitationProbability);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'WeatherModel(temperature: $temperature, precipitation30: $precipitation30, relativeHumidity: $relativeHumidity)';
+  return 'WeatherModel(timestamp: $timestamp, temperature: $temperature, relativeHumidity: $relativeHumidity, precipitationProbability: $precipitationProbability)';
 }
 
 
@@ -54,7 +54,7 @@ abstract mixin class $WeatherModelCopyWith<$Res>  {
   factory $WeatherModelCopyWith(WeatherModel value, $Res Function(WeatherModel) _then) = _$WeatherModelCopyWithImpl;
 @useResult
 $Res call({
- double? temperature, double? precipitation30, int? relativeHumidity
+@WeatherDateTimeConverter() DateTime timestamp, double? temperature, int? relativeHumidity, int? precipitationProbability
 });
 
 
@@ -71,11 +71,12 @@ class _$WeatherModelCopyWithImpl<$Res>
 
 /// Create a copy of WeatherModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? temperature = freezed,Object? precipitation30 = freezed,Object? relativeHumidity = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? timestamp = null,Object? temperature = freezed,Object? relativeHumidity = freezed,Object? precipitationProbability = freezed,}) {
   return _then(_self.copyWith(
-temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
-as double?,precipitation30: freezed == precipitation30 ? _self.precipitation30 : precipitation30 // ignore: cast_nullable_to_non_nullable
+timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
+as DateTime,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,relativeHumidity: freezed == relativeHumidity ? _self.relativeHumidity : relativeHumidity // ignore: cast_nullable_to_non_nullable
+as int?,precipitationProbability: freezed == precipitationProbability ? _self.precipitationProbability : precipitationProbability // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
@@ -161,10 +162,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( double? temperature,  double? precipitation30,  int? relativeHumidity)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@WeatherDateTimeConverter()  DateTime timestamp,  double? temperature,  int? relativeHumidity,  int? precipitationProbability)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WeatherModel() when $default != null:
-return $default(_that.temperature,_that.precipitation30,_that.relativeHumidity);case _:
+return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.precipitationProbability);case _:
   return orElse();
 
 }
@@ -182,10 +183,10 @@ return $default(_that.temperature,_that.precipitation30,_that.relativeHumidity);
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( double? temperature,  double? precipitation30,  int? relativeHumidity)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@WeatherDateTimeConverter()  DateTime timestamp,  double? temperature,  int? relativeHumidity,  int? precipitationProbability)  $default,) {final _that = this;
 switch (_that) {
 case _WeatherModel():
-return $default(_that.temperature,_that.precipitation30,_that.relativeHumidity);case _:
+return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.precipitationProbability);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -202,10 +203,10 @@ return $default(_that.temperature,_that.precipitation30,_that.relativeHumidity);
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( double? temperature,  double? precipitation30,  int? relativeHumidity)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@WeatherDateTimeConverter()  DateTime timestamp,  double? temperature,  int? relativeHumidity,  int? precipitationProbability)?  $default,) {final _that = this;
 switch (_that) {
 case _WeatherModel() when $default != null:
-return $default(_that.temperature,_that.precipitation30,_that.relativeHumidity);case _:
+return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.precipitationProbability);case _:
   return null;
 
 }
@@ -217,12 +218,13 @@ return $default(_that.temperature,_that.precipitation30,_that.relativeHumidity);
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _WeatherModel with DiagnosticableTreeMixin implements WeatherModel {
-  const _WeatherModel({this.temperature, this.precipitation30, this.relativeHumidity});
+  const _WeatherModel({@WeatherDateTimeConverter() required this.timestamp, this.temperature, this.relativeHumidity, this.precipitationProbability});
   factory _WeatherModel.fromJson(Map<String, dynamic> json) => _$WeatherModelFromJson(json);
 
+@override@WeatherDateTimeConverter() final  DateTime timestamp;
 @override final  double? temperature;
-@override final  double? precipitation30;
 @override final  int? relativeHumidity;
+@override final  int? precipitationProbability;
 
 /// Create a copy of WeatherModel
 /// with the given fields replaced by the non-null parameter values.
@@ -238,21 +240,21 @@ Map<String, dynamic> toJson() {
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'WeatherModel'))
-    ..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('precipitation30', precipitation30))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity));
+    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('precipitationProbability', precipitationProbability));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WeatherModel&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.precipitation30, precipitation30) || other.precipitation30 == precipitation30)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _WeatherModel&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.precipitationProbability, precipitationProbability) || other.precipitationProbability == precipitationProbability));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,temperature,precipitation30,relativeHumidity);
+int get hashCode => Object.hash(runtimeType,timestamp,temperature,relativeHumidity,precipitationProbability);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'WeatherModel(temperature: $temperature, precipitation30: $precipitation30, relativeHumidity: $relativeHumidity)';
+  return 'WeatherModel(timestamp: $timestamp, temperature: $temperature, relativeHumidity: $relativeHumidity, precipitationProbability: $precipitationProbability)';
 }
 
 
@@ -263,7 +265,7 @@ abstract mixin class _$WeatherModelCopyWith<$Res> implements $WeatherModelCopyWi
   factory _$WeatherModelCopyWith(_WeatherModel value, $Res Function(_WeatherModel) _then) = __$WeatherModelCopyWithImpl;
 @override @useResult
 $Res call({
- double? temperature, double? precipitation30, int? relativeHumidity
+@WeatherDateTimeConverter() DateTime timestamp, double? temperature, int? relativeHumidity, int? precipitationProbability
 });
 
 
@@ -280,11 +282,12 @@ class __$WeatherModelCopyWithImpl<$Res>
 
 /// Create a copy of WeatherModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? temperature = freezed,Object? precipitation30 = freezed,Object? relativeHumidity = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? timestamp = null,Object? temperature = freezed,Object? relativeHumidity = freezed,Object? precipitationProbability = freezed,}) {
   return _then(_WeatherModel(
-temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
-as double?,precipitation30: freezed == precipitation30 ? _self.precipitation30 : precipitation30 // ignore: cast_nullable_to_non_nullable
+timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
+as DateTime,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,relativeHumidity: freezed == relativeHumidity ? _self.relativeHumidity : relativeHumidity // ignore: cast_nullable_to_non_nullable
+as int?,precipitationProbability: freezed == precipitationProbability ? _self.precipitationProbability : precipitationProbability // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
