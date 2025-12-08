@@ -13,6 +13,7 @@ abstract class WeatherModel with _$WeatherModel {
     required DateTime timestamp,
     double? temperature,
     int? relativeHumidity,
+    double? pressureMsl,
     int? precipitationProbability,
   }) = _WeatherModel;
 

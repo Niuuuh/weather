@@ -5,10 +5,12 @@ class Bone extends StatelessWidget {
     super.key,
     this.width,
     this.height,
+    this.borderRadius = const BorderRadius.all(Radius.circular(16)),
   });
 
   final double? width;
   final double? height;
+  final BorderRadius borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,8 @@ class Bone extends StatelessWidget {
       height: height,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: colorScheme.surfaceContainerHighest,
+          borderRadius: borderRadius,
+          color: colorScheme.surfaceContainer.withValues(alpha: 0.5),
         ),
       ),
     );

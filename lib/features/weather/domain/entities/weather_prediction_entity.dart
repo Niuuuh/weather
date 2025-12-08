@@ -13,7 +13,7 @@ abstract class WeatherPredictionEntity with _$WeatherPredictionEntity {
     int? precipitationProbability,
   }) = _WeatherPredictionEntity;
 
-  double? normalizedPrecipitationProbability() {
+  double? get normalizedPrecipitationProbability {
     return precipitationProbability != null
         ? precipitationProbability! / 100
         : null;

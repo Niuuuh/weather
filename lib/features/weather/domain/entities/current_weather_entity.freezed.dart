@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CurrentWeatherEntity implements DiagnosticableTreeMixin {
 
- DateTime get timestamp; double? get temperature; int? get relativeHumidity; String? get stationName; int? get distance;
+ DateTime get timestamp; double? get temperature; int? get relativeHumidity; double? get pressure; String? get stationName; int? get distance;
 /// Create a copy of CurrentWeatherEntity
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,21 +26,21 @@ $CurrentWeatherEntityCopyWith<CurrentWeatherEntity> get copyWith => _$CurrentWea
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'CurrentWeatherEntity'))
-    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('stationName', stationName))..add(DiagnosticsProperty('distance', distance));
+    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('pressure', pressure))..add(DiagnosticsProperty('stationName', stationName))..add(DiagnosticsProperty('distance', distance));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CurrentWeatherEntity&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.stationName, stationName) || other.stationName == stationName)&&(identical(other.distance, distance) || other.distance == distance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CurrentWeatherEntity&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.pressure, pressure) || other.pressure == pressure)&&(identical(other.stationName, stationName) || other.stationName == stationName)&&(identical(other.distance, distance) || other.distance == distance));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,timestamp,temperature,relativeHumidity,stationName,distance);
+int get hashCode => Object.hash(runtimeType,timestamp,temperature,relativeHumidity,pressure,stationName,distance);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'CurrentWeatherEntity(timestamp: $timestamp, temperature: $temperature, relativeHumidity: $relativeHumidity, stationName: $stationName, distance: $distance)';
+  return 'CurrentWeatherEntity(timestamp: $timestamp, temperature: $temperature, relativeHumidity: $relativeHumidity, pressure: $pressure, stationName: $stationName, distance: $distance)';
 }
 
 
@@ -51,7 +51,7 @@ abstract mixin class $CurrentWeatherEntityCopyWith<$Res>  {
   factory $CurrentWeatherEntityCopyWith(CurrentWeatherEntity value, $Res Function(CurrentWeatherEntity) _then) = _$CurrentWeatherEntityCopyWithImpl;
 @useResult
 $Res call({
- DateTime timestamp, double? temperature, int? relativeHumidity, String? stationName, int? distance
+ DateTime timestamp, double? temperature, int? relativeHumidity, double? pressure, String? stationName, int? distance
 });
 
 
@@ -68,12 +68,13 @@ class _$CurrentWeatherEntityCopyWithImpl<$Res>
 
 /// Create a copy of CurrentWeatherEntity
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? timestamp = null,Object? temperature = freezed,Object? relativeHumidity = freezed,Object? stationName = freezed,Object? distance = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? timestamp = null,Object? temperature = freezed,Object? relativeHumidity = freezed,Object? pressure = freezed,Object? stationName = freezed,Object? distance = freezed,}) {
   return _then(_self.copyWith(
 timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
 as DateTime,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,relativeHumidity: freezed == relativeHumidity ? _self.relativeHumidity : relativeHumidity // ignore: cast_nullable_to_non_nullable
-as int?,stationName: freezed == stationName ? _self.stationName : stationName // ignore: cast_nullable_to_non_nullable
+as int?,pressure: freezed == pressure ? _self.pressure : pressure // ignore: cast_nullable_to_non_nullable
+as double?,stationName: freezed == stationName ? _self.stationName : stationName // ignore: cast_nullable_to_non_nullable
 as String?,distance: freezed == distance ? _self.distance : distance // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
@@ -160,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime timestamp,  double? temperature,  int? relativeHumidity,  String? stationName,  int? distance)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( DateTime timestamp,  double? temperature,  int? relativeHumidity,  double? pressure,  String? stationName,  int? distance)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CurrentWeatherEntity() when $default != null:
-return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.stationName,_that.distance);case _:
+return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.pressure,_that.stationName,_that.distance);case _:
   return orElse();
 
 }
@@ -181,10 +182,10 @@ return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.s
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime timestamp,  double? temperature,  int? relativeHumidity,  String? stationName,  int? distance)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( DateTime timestamp,  double? temperature,  int? relativeHumidity,  double? pressure,  String? stationName,  int? distance)  $default,) {final _that = this;
 switch (_that) {
 case _CurrentWeatherEntity():
-return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.stationName,_that.distance);case _:
+return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.pressure,_that.stationName,_that.distance);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -201,10 +202,10 @@ return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.s
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime timestamp,  double? temperature,  int? relativeHumidity,  String? stationName,  int? distance)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( DateTime timestamp,  double? temperature,  int? relativeHumidity,  double? pressure,  String? stationName,  int? distance)?  $default,) {final _that = this;
 switch (_that) {
 case _CurrentWeatherEntity() when $default != null:
-return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.stationName,_that.distance);case _:
+return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.pressure,_that.stationName,_that.distance);case _:
   return null;
 
 }
@@ -215,13 +216,14 @@ return $default(_that.timestamp,_that.temperature,_that.relativeHumidity,_that.s
 /// @nodoc
 
 
-class _CurrentWeatherEntity extends CurrentWeatherEntity with DiagnosticableTreeMixin {
-  const _CurrentWeatherEntity({required this.timestamp, this.temperature, this.relativeHumidity, this.stationName, this.distance}): super._();
+class _CurrentWeatherEntity with DiagnosticableTreeMixin implements CurrentWeatherEntity {
+  const _CurrentWeatherEntity({required this.timestamp, this.temperature, this.relativeHumidity, this.pressure, this.stationName, this.distance});
   
 
 @override final  DateTime timestamp;
 @override final  double? temperature;
 @override final  int? relativeHumidity;
+@override final  double? pressure;
 @override final  String? stationName;
 @override final  int? distance;
 
@@ -236,21 +238,21 @@ _$CurrentWeatherEntityCopyWith<_CurrentWeatherEntity> get copyWith => __$Current
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'CurrentWeatherEntity'))
-    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('stationName', stationName))..add(DiagnosticsProperty('distance', distance));
+    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('pressure', pressure))..add(DiagnosticsProperty('stationName', stationName))..add(DiagnosticsProperty('distance', distance));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CurrentWeatherEntity&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.stationName, stationName) || other.stationName == stationName)&&(identical(other.distance, distance) || other.distance == distance));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CurrentWeatherEntity&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.pressure, pressure) || other.pressure == pressure)&&(identical(other.stationName, stationName) || other.stationName == stationName)&&(identical(other.distance, distance) || other.distance == distance));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,timestamp,temperature,relativeHumidity,stationName,distance);
+int get hashCode => Object.hash(runtimeType,timestamp,temperature,relativeHumidity,pressure,stationName,distance);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'CurrentWeatherEntity(timestamp: $timestamp, temperature: $temperature, relativeHumidity: $relativeHumidity, stationName: $stationName, distance: $distance)';
+  return 'CurrentWeatherEntity(timestamp: $timestamp, temperature: $temperature, relativeHumidity: $relativeHumidity, pressure: $pressure, stationName: $stationName, distance: $distance)';
 }
 
 
@@ -261,7 +263,7 @@ abstract mixin class _$CurrentWeatherEntityCopyWith<$Res> implements $CurrentWea
   factory _$CurrentWeatherEntityCopyWith(_CurrentWeatherEntity value, $Res Function(_CurrentWeatherEntity) _then) = __$CurrentWeatherEntityCopyWithImpl;
 @override @useResult
 $Res call({
- DateTime timestamp, double? temperature, int? relativeHumidity, String? stationName, int? distance
+ DateTime timestamp, double? temperature, int? relativeHumidity, double? pressure, String? stationName, int? distance
 });
 
 
@@ -278,12 +280,13 @@ class __$CurrentWeatherEntityCopyWithImpl<$Res>
 
 /// Create a copy of CurrentWeatherEntity
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? timestamp = null,Object? temperature = freezed,Object? relativeHumidity = freezed,Object? stationName = freezed,Object? distance = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? timestamp = null,Object? temperature = freezed,Object? relativeHumidity = freezed,Object? pressure = freezed,Object? stationName = freezed,Object? distance = freezed,}) {
   return _then(_CurrentWeatherEntity(
 timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
 as DateTime,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,relativeHumidity: freezed == relativeHumidity ? _self.relativeHumidity : relativeHumidity // ignore: cast_nullable_to_non_nullable
-as int?,stationName: freezed == stationName ? _self.stationName : stationName // ignore: cast_nullable_to_non_nullable
+as int?,pressure: freezed == pressure ? _self.pressure : pressure // ignore: cast_nullable_to_non_nullable
+as double?,stationName: freezed == stationName ? _self.stationName : stationName // ignore: cast_nullable_to_non_nullable
 as String?,distance: freezed == distance ? _self.distance : distance // ignore: cast_nullable_to_non_nullable
 as int?,
   ));

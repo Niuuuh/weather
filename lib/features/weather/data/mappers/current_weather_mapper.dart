@@ -7,6 +7,7 @@ abstract class CurrentWeatherMapper {
       timestamp: model.weather.timestamp,
       temperature: model.weather.temperature,
       relativeHumidity: model.weather.relativeHumidity,
+      pressure: model.weather.pressureMsl,
       stationName: model.sources.firstOrNull?.stationName,
       distance: model.sources.firstOrNull?.distance,
     );

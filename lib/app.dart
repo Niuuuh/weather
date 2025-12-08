@@ -10,6 +10,7 @@ class MainApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
       routerConfig: ref.read(routerProvider),
+      theme: ref.read(themeProvider),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -4,8 +4,9 @@ import 'package:weather/features/location/domain/entities/location_entity.dart';
 import 'package:weather/features/weather/ui/providers/weather_providers.dart';
 import 'package:weather/shared/services/error_service.dart';
 
-import '../../../../shared/providers/shared_providers.dart';
+import '../../../../core/theme/theme.dart';
 import '../../../../shared/widgets/bone.dart';
+import '../../../../shared/widgets/smart_ink_well.dart';
 
 class LocationListTile extends ConsumerWidget {
   const LocationListTile({
@@ -26,32 +27,61 @@ class LocationListTile extends ConsumerWidget {
     });
 
     final asyncWeather = ref.watch(currentWeatherProvider(location));
-    final unit = ref.watch(temperatureUnitProvider);
 
     return asyncWeather.maybeWhen(
       data: (weather) {
         final temperature = ref.watch(temperatureProvider(weather.temperature));
-        return ListTile(
-          title: location.map(
-            current: (_) => Text("Current Location"),
-            static: (staticLocation) => Text(staticLocation.name),
+        return SizedBox(
+          height: 200,
+          child: Material(
+            color: AppColors.container,
+            borderRadius: BorderRadii.large,
+            child: SmartInkWell(
+              onTap: onTap,
+              child: Stack(
+                children: [
+                  if (location case StaticLocationEntity staticLocation)
+                    Positioned(
+                      top: 20,
+                      right: -40,
+                      bottom: -40,
+                      width: 300,
+                      child: Image.asset("assets/images/locations/${staticLocation.id}.png"),
+                    ),
+                  Positioned(
+                    top: 16,
+                    left: 16,
+                    bottom: 24,
+                    width: 200,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          location.map(
+                            current: (_) => "Current Location",
+                            static: (staticLocation) => staticLocation.name,
+                          ),
+                          style: TextStyles.titleMedium,
+                        ),
+                        if (temperature != null)
+                          Text(
+                            "${temperature.toStringAsFixed(0)}°",
+                            style: TextStyles.numberMedium,
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
           ),
-          subtitle: temperature != null
-            ? Text("${temperature.toStringAsFixed(1)}${unit.symbol}")
-            : null,
-          onTap: onTap,
         );
       },
       orElse: () {
-        return ListTile(
-          title: location.map(
-            current: (_) => Text("Current Location"),
-            static: (staticLocation) => Text(staticLocation.name),
-          ),
-          subtitle: Align(
-            alignment: Alignment.centerLeft,
-            child: Bone(width: 50, height: 8),
-          ),
+        return Bone(
+          borderRadius: BorderRadii.large,
+          height: 200,
         );
       },
     );

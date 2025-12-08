@@ -11,7 +11,8 @@ class LocationListView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locations = ref.watch(locationsProvider);
-    return ListView.builder(
+    return ListView.separated(
+      padding: EdgeInsets.all(20),
       itemCount: locations.length,
       itemBuilder: (context, index) {
         final location = locations[index];
@@ -21,6 +22,9 @@ class LocationListView extends ConsumerWidget {
             context.goLocationDetail(location: location);
           },
         );
+      },
+      separatorBuilder: (context, index) {
+        return SizedBox(height: 12);
       },
     );
   }

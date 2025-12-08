@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/features/location/domain/entities/location_entity.dart';
+import 'package:weather/features/weather/ui/widgets/precipitation_bar.dart';
 
+import '../../../../core/theme/theme.dart';
+import '../../../../shared/widgets/bone.dart';
 import '../providers/weather_providers.dart';
 
 class PrecipitationListView extends ConsumerWidget {
@@ -17,36 +20,31 @@ class PrecipitationListView extends ConsumerWidget {
     final asyncHourlyWeather = ref.watch(hourlyWeatherProvider(location));
 
     return SizedBox(
-      height: 200,
-      child: asyncHourlyWeather.maybeWhen(
-        data: (hourlyWeather) {
-          return ListView.separated(
-            scrollDirection: Axis.horizontal,
-            itemCount: hourlyWeather.length,
-            itemBuilder: (context, index) {
+      height: 210,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.all(16),
+        itemCount: asyncHourlyWeather.valueOrNull?.length ?? 8,
+        itemBuilder: (context, index) {
+          return asyncHourlyWeather.maybeWhen(
+            data: (hourlyWeather) {
               final weather = hourlyWeather[index];
-              final temperature = ref.watch(temperatureProvider(weather.temperature));
               return SizedBox(
-                width: 60,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    if (temperature != null)
-                      Text("${temperature.toStringAsFixed(1)}°"),
-                    if (weather.precipitationProbability != null)
-                      Text("${weather.precipitationProbability}%"),
-                    Text("${weather.timestamp.hour.toString().padLeft(2, '0')}:00"),
-                  ],
-                ),
+                width: 80,
+                child: PrecipitationBar(weather: weather),
               );
             },
-            separatorBuilder: (context, index) {
-              return SizedBox(width: 6);
+            orElse: () {
+              return Bone(
+                borderRadius: BorderRadii.large,
+                width: 80,
+              );
             },
           );
         },
-        orElse: () => Placeholder(),
+        separatorBuilder: (context, index) {
+          return SizedBox(width: 8);
+        },
       ),
     );
   }

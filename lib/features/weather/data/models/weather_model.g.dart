@@ -13,6 +13,7 @@ _WeatherModel _$WeatherModelFromJson(Map<String, dynamic> json) =>
       ),
       temperature: (json['temperature'] as num?)?.toDouble(),
       relativeHumidity: (json['relative_humidity'] as num?)?.toInt(),
+      pressureMsl: (json['pressure_msl'] as num?)?.toDouble(),
       precipitationProbability: (json['precipitation_probability'] as num?)
           ?.toInt(),
     );
@@ -22,5 +23,6 @@ Map<String, dynamic> _$WeatherModelToJson(_WeatherModel instance) =>
       'timestamp': const WeatherDateTimeConverter().toJson(instance.timestamp),
       'temperature': instance.temperature,
       'relative_humidity': instance.relativeHumidity,
+      'pressure_msl': instance.pressureMsl,
       'precipitation_probability': instance.precipitationProbability,
     };
