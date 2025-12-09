@@ -214,7 +214,7 @@ return $default(_that.lat,_that.lon);case _:
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class _CurrentWeatherParametersModel with DiagnosticableTreeMixin implements CurrentWeatherParametersModel {
   const _CurrentWeatherParametersModel({required this.lat, required this.lon});
   factory _CurrentWeatherParametersModel.fromJson(Map<String, dynamic> json) => _$CurrentWeatherParametersModelFromJson(json);

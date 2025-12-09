@@ -19,7 +19,6 @@ abstract class CurrentWeatherModel with _$CurrentWeatherModel {
   const factory CurrentWeatherModel({
     @WeatherDateTimeConverter()
     required DateTime timestamp,
-    required int sourceId,
     double? cloudCover,
     WeatherConditionModel? condition,
     double? dewPoint,
@@ -28,7 +27,6 @@ abstract class CurrentWeatherModel with _$CurrentWeatherModel {
     int? relativeHumidity,
     double? temperature,
     int? visibility,
-    required Map<String, int> fallbackSourceIds,
     double? precipitation10,
     double? precipitation30,
     double? precipitation60,

@@ -11,7 +11,6 @@ _CurrentWeatherModel _$CurrentWeatherModelFromJson(Map<String, dynamic> json) =>
       timestamp: const WeatherDateTimeConverter().fromJson(
         json['timestamp'] as String,
       ),
-      sourceId: (json['source_id'] as num).toInt(),
       cloudCover: (json['cloud_cover'] as num?)?.toDouble(),
       condition: $enumDecodeNullable(
         _$WeatherConditionModelEnumMap,
@@ -23,9 +22,6 @@ _CurrentWeatherModel _$CurrentWeatherModelFromJson(Map<String, dynamic> json) =>
       relativeHumidity: (json['relative_humidity'] as num?)?.toInt(),
       temperature: (json['temperature'] as num?)?.toDouble(),
       visibility: (json['visibility'] as num?)?.toInt(),
-      fallbackSourceIds: Map<String, int>.from(
-        json['fallback_source_ids'] as Map,
-      ),
       precipitation10: (json['precipitation10'] as num?)?.toDouble(),
       precipitation30: (json['precipitation30'] as num?)?.toDouble(),
       precipitation60: (json['precipitation60'] as num?)?.toDouble(),
@@ -52,7 +48,6 @@ Map<String, dynamic> _$CurrentWeatherModelToJson(
   _CurrentWeatherModel instance,
 ) => <String, dynamic>{
   'timestamp': const WeatherDateTimeConverter().toJson(instance.timestamp),
-  'source_id': instance.sourceId,
   'cloud_cover': instance.cloudCover,
   'condition': _$WeatherConditionModelEnumMap[instance.condition],
   'dew_point': instance.dewPoint,
@@ -61,7 +56,6 @@ Map<String, dynamic> _$CurrentWeatherModelToJson(
   'relative_humidity': instance.relativeHumidity,
   'temperature': instance.temperature,
   'visibility': instance.visibility,
-  'fallback_source_ids': instance.fallbackSourceIds,
   'precipitation10': instance.precipitation10,
   'precipitation30': instance.precipitation30,
   'precipitation60': instance.precipitation60,

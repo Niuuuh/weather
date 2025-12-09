@@ -216,7 +216,7 @@ return $default(_that.lat,_that.lon,_that.date,_that.lastDate);case _:
 
 /// @nodoc
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
 class _HourlyWeatherParametersModel with DiagnosticableTreeMixin implements HourlyWeatherParametersModel {
   const _HourlyWeatherParametersModel({required this.lat, required this.lon, @WeatherDateTimeConverter() required this.date, @WeatherDateTimeConverter() this.lastDate});
   factory _HourlyWeatherParametersModel.fromJson(Map<String, dynamic> json) => _$HourlyWeatherParametersModelFromJson(json);

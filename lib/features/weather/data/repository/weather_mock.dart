@@ -36,7 +36,7 @@ class WeatherMock {
   }
 
   // Pressure hPa
-  double? pressureMsl() => random.nextDoubleInRange(960, 1045);
+  double? pressure() => random.nextDoubleInRange(960, 1045);
 
   // Relative humidity %
   int? relativeHumidity() => random.nextIntInRange(10, 100);
@@ -46,16 +46,6 @@ class WeatherMock {
 
   // Visibility m (DWD often ranges 0–50k)
   int? visibility() => random.nextIntInRange(200, 60000);
-
-  // fallback source ids (just random IDs or null)
-  Map<String, int>? fallbackSourceIds() {
-    return {
-      if (random.nextBool())
-        'pressure_msl': random.nextIntInRange(10000, 20000),
-      if (random.nextBool())
-        'wind_speed_30': random.nextIntInRange(10000, 20000),
-    };
-  }
 
   // Precipitation mm (per hour)
   double? precipitation() {

@@ -21,5 +21,5 @@ Map<String, dynamic> _$HourlyWeatherParametersModelToJson(
   'lat': instance.lat,
   'lon': instance.lon,
   'date': const WeatherDateTimeConverter().toJson(instance.date),
-  'last_date': instance.lastDate,
+  'last_date': ?instance.lastDate,
 };

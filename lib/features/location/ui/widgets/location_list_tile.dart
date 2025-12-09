@@ -7,6 +7,7 @@ import 'package:weather/shared/services/error_service.dart';
 import '../../../../core/theme/theme.dart';
 import '../../../../shared/widgets/bone.dart';
 import '../../../../shared/widgets/smart_ink_well.dart';
+import '../../../../shared/widgets/weather_icon.dart';
 
 class LocationListTile extends ConsumerWidget {
   const LocationListTile({
@@ -64,11 +65,22 @@ class LocationListTile extends ConsumerWidget {
                           ),
                           style: TextStyles.titleMedium,
                         ),
-                        if (temperature != null)
-                          Text(
-                            "${temperature.toStringAsFixed(0)}°",
-                            style: TextStyles.numberMedium,
-                          ),
+                        Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            WeatherIcon(
+                              weather: weather,
+                              location: location,
+                              size: 50,
+                            ),
+                            SizedBox(width: 4),
+                            if (temperature != null)
+                              Text(
+                                "${temperature.toStringAsFixed(0)}°",
+                                style: TextStyles.numberMedium,
+                              ),
+                          ],
+                        ),
                       ],
                     ),
                   ),

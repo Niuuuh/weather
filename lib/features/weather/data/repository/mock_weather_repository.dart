@@ -15,8 +15,7 @@ class MockWeatherRepository implements WeatherRepository {
   }) async {
     await Future.delayed(Duration(milliseconds: 2000));
 
-    final date = DateTime.now();
-    final seed = Object.hash(longitude, latitude, date);
+    final seed = Object.hash(longitude, latitude);
     final mock = WeatherMock(seed);
 
     return CurrentWeatherEntity(
@@ -25,7 +24,7 @@ class MockWeatherRepository implements WeatherRepository {
       condition: mock.condition(),
       dewPoint: mock.dewPoint(),
       icon: mock.icon(),
-      pressure: mock.pressureMsl(),
+      pressure: mock.pressure(),
       relativeHumidity: mock.relativeHumidity(),
       temperature: mock.temperature(),
       visibility: mock.visibility(),
@@ -49,7 +48,7 @@ class MockWeatherRepository implements WeatherRepository {
   }) async {
     await Future.delayed(Duration(milliseconds: 1000));
 
-    final seed = Object.hash(longitude, latitude, date);
+    final seed = Object.hash(longitude, latitude);
     final mock = WeatherMock(seed);
 
     return [
@@ -60,7 +59,7 @@ class MockWeatherRepository implements WeatherRepository {
           condition: mock.condition(),
           dewPoint: mock.dewPoint(),
           icon: mock.icon(),
-          pressure: mock.pressureMsl(),
+          pressure: mock.pressure(),
           relativeHumidity: mock.relativeHumidity(),
           temperature: mock.temperature(),
           visibility: mock.visibility(),

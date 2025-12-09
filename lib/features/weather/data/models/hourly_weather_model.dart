@@ -19,7 +19,6 @@ abstract class HourlyWeatherModel with _$HourlyWeatherModel {
   const factory HourlyWeatherModel({
     @WeatherDateTimeConverter()
     required DateTime timestamp,
-    required int sourceId,
     double? cloudCover,
     WeatherConditionModel? condition,
     double? dewPoint,
@@ -28,7 +27,6 @@ abstract class HourlyWeatherModel with _$HourlyWeatherModel {
     int? relativeHumidity,
     double? temperature,
     int? visibility,
-    required Map<String, int> fallbackSourceIds,
     double? precipitation,
     double? solar,
     int? sunshine,
@@ -62,6 +60,7 @@ abstract class HourlyWeatherModel with _$HourlyWeatherModel {
       windSpeed: windSpeed,
       windGustDirection: windGustDirection,
       windGustSpeed: windGustSpeed,
+      precipitationProbability: precipitationProbability ?? precipitationProbability6h,
     );
   }
 }

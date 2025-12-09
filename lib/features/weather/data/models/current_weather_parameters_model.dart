@@ -6,7 +6,7 @@ part 'current_weather_parameters_model.g.dart';
 
 @freezed
 abstract class CurrentWeatherParametersModel with _$CurrentWeatherParametersModel {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
   const factory CurrentWeatherParametersModel({
     required double lat,
     required double lon,

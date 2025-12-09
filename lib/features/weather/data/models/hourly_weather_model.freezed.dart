@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HourlyWeatherModel implements DiagnosticableTreeMixin {
 
-@WeatherDateTimeConverter() DateTime get timestamp; int get sourceId; double? get cloudCover; WeatherConditionModel? get condition; double? get dewPoint; WeatherIconModel? get icon; double? get pressureMsl; int? get relativeHumidity; double? get temperature; int? get visibility; Map<String, int> get fallbackSourceIds; double? get precipitation; double? get solar; int? get sunshine; int? get windDirection; double? get windSpeed; int? get windGustDirection; double? get windGustSpeed; int? get precipitationProbability; int? get precipitationProbability6h;
+@WeatherDateTimeConverter() DateTime get timestamp; double? get cloudCover; WeatherConditionModel? get condition; double? get dewPoint; WeatherIconModel? get icon; double? get pressureMsl; int? get relativeHumidity; double? get temperature; int? get visibility; double? get precipitation; double? get solar; int? get sunshine; int? get windDirection; double? get windSpeed; int? get windGustDirection; double? get windGustSpeed; int? get precipitationProbability; int? get precipitationProbability6h;
 /// Create a copy of HourlyWeatherModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -29,21 +29,21 @@ $HourlyWeatherModelCopyWith<HourlyWeatherModel> get copyWith => _$HourlyWeatherM
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'HourlyWeatherModel'))
-    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('sourceId', sourceId))..add(DiagnosticsProperty('cloudCover', cloudCover))..add(DiagnosticsProperty('condition', condition))..add(DiagnosticsProperty('dewPoint', dewPoint))..add(DiagnosticsProperty('icon', icon))..add(DiagnosticsProperty('pressureMsl', pressureMsl))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('visibility', visibility))..add(DiagnosticsProperty('fallbackSourceIds', fallbackSourceIds))..add(DiagnosticsProperty('precipitation', precipitation))..add(DiagnosticsProperty('solar', solar))..add(DiagnosticsProperty('sunshine', sunshine))..add(DiagnosticsProperty('windDirection', windDirection))..add(DiagnosticsProperty('windSpeed', windSpeed))..add(DiagnosticsProperty('windGustDirection', windGustDirection))..add(DiagnosticsProperty('windGustSpeed', windGustSpeed))..add(DiagnosticsProperty('precipitationProbability', precipitationProbability))..add(DiagnosticsProperty('precipitationProbability6h', precipitationProbability6h));
+    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('cloudCover', cloudCover))..add(DiagnosticsProperty('condition', condition))..add(DiagnosticsProperty('dewPoint', dewPoint))..add(DiagnosticsProperty('icon', icon))..add(DiagnosticsProperty('pressureMsl', pressureMsl))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('visibility', visibility))..add(DiagnosticsProperty('precipitation', precipitation))..add(DiagnosticsProperty('solar', solar))..add(DiagnosticsProperty('sunshine', sunshine))..add(DiagnosticsProperty('windDirection', windDirection))..add(DiagnosticsProperty('windSpeed', windSpeed))..add(DiagnosticsProperty('windGustDirection', windGustDirection))..add(DiagnosticsProperty('windGustSpeed', windGustSpeed))..add(DiagnosticsProperty('precipitationProbability', precipitationProbability))..add(DiagnosticsProperty('precipitationProbability6h', precipitationProbability6h));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is HourlyWeatherModel&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.cloudCover, cloudCover) || other.cloudCover == cloudCover)&&(identical(other.condition, condition) || other.condition == condition)&&(identical(other.dewPoint, dewPoint) || other.dewPoint == dewPoint)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.pressureMsl, pressureMsl) || other.pressureMsl == pressureMsl)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.visibility, visibility) || other.visibility == visibility)&&const DeepCollectionEquality().equals(other.fallbackSourceIds, fallbackSourceIds)&&(identical(other.precipitation, precipitation) || other.precipitation == precipitation)&&(identical(other.solar, solar) || other.solar == solar)&&(identical(other.sunshine, sunshine) || other.sunshine == sunshine)&&(identical(other.windDirection, windDirection) || other.windDirection == windDirection)&&(identical(other.windSpeed, windSpeed) || other.windSpeed == windSpeed)&&(identical(other.windGustDirection, windGustDirection) || other.windGustDirection == windGustDirection)&&(identical(other.windGustSpeed, windGustSpeed) || other.windGustSpeed == windGustSpeed)&&(identical(other.precipitationProbability, precipitationProbability) || other.precipitationProbability == precipitationProbability)&&(identical(other.precipitationProbability6h, precipitationProbability6h) || other.precipitationProbability6h == precipitationProbability6h));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is HourlyWeatherModel&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.cloudCover, cloudCover) || other.cloudCover == cloudCover)&&(identical(other.condition, condition) || other.condition == condition)&&(identical(other.dewPoint, dewPoint) || other.dewPoint == dewPoint)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.pressureMsl, pressureMsl) || other.pressureMsl == pressureMsl)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.visibility, visibility) || other.visibility == visibility)&&(identical(other.precipitation, precipitation) || other.precipitation == precipitation)&&(identical(other.solar, solar) || other.solar == solar)&&(identical(other.sunshine, sunshine) || other.sunshine == sunshine)&&(identical(other.windDirection, windDirection) || other.windDirection == windDirection)&&(identical(other.windSpeed, windSpeed) || other.windSpeed == windSpeed)&&(identical(other.windGustDirection, windGustDirection) || other.windGustDirection == windGustDirection)&&(identical(other.windGustSpeed, windGustSpeed) || other.windGustSpeed == windGustSpeed)&&(identical(other.precipitationProbability, precipitationProbability) || other.precipitationProbability == precipitationProbability)&&(identical(other.precipitationProbability6h, precipitationProbability6h) || other.precipitationProbability6h == precipitationProbability6h));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,timestamp,sourceId,cloudCover,condition,dewPoint,icon,pressureMsl,relativeHumidity,temperature,visibility,const DeepCollectionEquality().hash(fallbackSourceIds),precipitation,solar,sunshine,windDirection,windSpeed,windGustDirection,windGustSpeed,precipitationProbability,precipitationProbability6h]);
+int get hashCode => Object.hash(runtimeType,timestamp,cloudCover,condition,dewPoint,icon,pressureMsl,relativeHumidity,temperature,visibility,precipitation,solar,sunshine,windDirection,windSpeed,windGustDirection,windGustSpeed,precipitationProbability,precipitationProbability6h);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'HourlyWeatherModel(timestamp: $timestamp, sourceId: $sourceId, cloudCover: $cloudCover, condition: $condition, dewPoint: $dewPoint, icon: $icon, pressureMsl: $pressureMsl, relativeHumidity: $relativeHumidity, temperature: $temperature, visibility: $visibility, fallbackSourceIds: $fallbackSourceIds, precipitation: $precipitation, solar: $solar, sunshine: $sunshine, windDirection: $windDirection, windSpeed: $windSpeed, windGustDirection: $windGustDirection, windGustSpeed: $windGustSpeed, precipitationProbability: $precipitationProbability, precipitationProbability6h: $precipitationProbability6h)';
+  return 'HourlyWeatherModel(timestamp: $timestamp, cloudCover: $cloudCover, condition: $condition, dewPoint: $dewPoint, icon: $icon, pressureMsl: $pressureMsl, relativeHumidity: $relativeHumidity, temperature: $temperature, visibility: $visibility, precipitation: $precipitation, solar: $solar, sunshine: $sunshine, windDirection: $windDirection, windSpeed: $windSpeed, windGustDirection: $windGustDirection, windGustSpeed: $windGustSpeed, precipitationProbability: $precipitationProbability, precipitationProbability6h: $precipitationProbability6h)';
 }
 
 
@@ -54,7 +54,7 @@ abstract mixin class $HourlyWeatherModelCopyWith<$Res>  {
   factory $HourlyWeatherModelCopyWith(HourlyWeatherModel value, $Res Function(HourlyWeatherModel) _then) = _$HourlyWeatherModelCopyWithImpl;
 @useResult
 $Res call({
-@WeatherDateTimeConverter() DateTime timestamp, int sourceId, double? cloudCover, WeatherConditionModel? condition, double? dewPoint, WeatherIconModel? icon, double? pressureMsl, int? relativeHumidity, double? temperature, int? visibility, Map<String, int> fallbackSourceIds, double? precipitation, double? solar, int? sunshine, int? windDirection, double? windSpeed, int? windGustDirection, double? windGustSpeed, int? precipitationProbability, int? precipitationProbability6h
+@WeatherDateTimeConverter() DateTime timestamp, double? cloudCover, WeatherConditionModel? condition, double? dewPoint, WeatherIconModel? icon, double? pressureMsl, int? relativeHumidity, double? temperature, int? visibility, double? precipitation, double? solar, int? sunshine, int? windDirection, double? windSpeed, int? windGustDirection, double? windGustSpeed, int? precipitationProbability, int? precipitationProbability6h
 });
 
 
@@ -71,11 +71,10 @@ class _$HourlyWeatherModelCopyWithImpl<$Res>
 
 /// Create a copy of HourlyWeatherModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? timestamp = null,Object? sourceId = null,Object? cloudCover = freezed,Object? condition = freezed,Object? dewPoint = freezed,Object? icon = freezed,Object? pressureMsl = freezed,Object? relativeHumidity = freezed,Object? temperature = freezed,Object? visibility = freezed,Object? fallbackSourceIds = null,Object? precipitation = freezed,Object? solar = freezed,Object? sunshine = freezed,Object? windDirection = freezed,Object? windSpeed = freezed,Object? windGustDirection = freezed,Object? windGustSpeed = freezed,Object? precipitationProbability = freezed,Object? precipitationProbability6h = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? timestamp = null,Object? cloudCover = freezed,Object? condition = freezed,Object? dewPoint = freezed,Object? icon = freezed,Object? pressureMsl = freezed,Object? relativeHumidity = freezed,Object? temperature = freezed,Object? visibility = freezed,Object? precipitation = freezed,Object? solar = freezed,Object? sunshine = freezed,Object? windDirection = freezed,Object? windSpeed = freezed,Object? windGustDirection = freezed,Object? windGustSpeed = freezed,Object? precipitationProbability = freezed,Object? precipitationProbability6h = freezed,}) {
   return _then(_self.copyWith(
 timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
-as DateTime,sourceId: null == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
-as int,cloudCover: freezed == cloudCover ? _self.cloudCover : cloudCover // ignore: cast_nullable_to_non_nullable
+as DateTime,cloudCover: freezed == cloudCover ? _self.cloudCover : cloudCover // ignore: cast_nullable_to_non_nullable
 as double?,condition: freezed == condition ? _self.condition : condition // ignore: cast_nullable_to_non_nullable
 as WeatherConditionModel?,dewPoint: freezed == dewPoint ? _self.dewPoint : dewPoint // ignore: cast_nullable_to_non_nullable
 as double?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
@@ -83,8 +82,7 @@ as WeatherIconModel?,pressureMsl: freezed == pressureMsl ? _self.pressureMsl : p
 as double?,relativeHumidity: freezed == relativeHumidity ? _self.relativeHumidity : relativeHumidity // ignore: cast_nullable_to_non_nullable
 as int?,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,visibility: freezed == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
-as int?,fallbackSourceIds: null == fallbackSourceIds ? _self.fallbackSourceIds : fallbackSourceIds // ignore: cast_nullable_to_non_nullable
-as Map<String, int>,precipitation: freezed == precipitation ? _self.precipitation : precipitation // ignore: cast_nullable_to_non_nullable
+as int?,precipitation: freezed == precipitation ? _self.precipitation : precipitation // ignore: cast_nullable_to_non_nullable
 as double?,solar: freezed == solar ? _self.solar : solar // ignore: cast_nullable_to_non_nullable
 as double?,sunshine: freezed == sunshine ? _self.sunshine : sunshine // ignore: cast_nullable_to_non_nullable
 as int?,windDirection: freezed == windDirection ? _self.windDirection : windDirection // ignore: cast_nullable_to_non_nullable
@@ -178,10 +176,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@WeatherDateTimeConverter()  DateTime timestamp,  int sourceId,  double? cloudCover,  WeatherConditionModel? condition,  double? dewPoint,  WeatherIconModel? icon,  double? pressureMsl,  int? relativeHumidity,  double? temperature,  int? visibility,  Map<String, int> fallbackSourceIds,  double? precipitation,  double? solar,  int? sunshine,  int? windDirection,  double? windSpeed,  int? windGustDirection,  double? windGustSpeed,  int? precipitationProbability,  int? precipitationProbability6h)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@WeatherDateTimeConverter()  DateTime timestamp,  double? cloudCover,  WeatherConditionModel? condition,  double? dewPoint,  WeatherIconModel? icon,  double? pressureMsl,  int? relativeHumidity,  double? temperature,  int? visibility,  double? precipitation,  double? solar,  int? sunshine,  int? windDirection,  double? windSpeed,  int? windGustDirection,  double? windGustSpeed,  int? precipitationProbability,  int? precipitationProbability6h)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HourlyWeatherModel() when $default != null:
-return $default(_that.timestamp,_that.sourceId,_that.cloudCover,_that.condition,_that.dewPoint,_that.icon,_that.pressureMsl,_that.relativeHumidity,_that.temperature,_that.visibility,_that.fallbackSourceIds,_that.precipitation,_that.solar,_that.sunshine,_that.windDirection,_that.windSpeed,_that.windGustDirection,_that.windGustSpeed,_that.precipitationProbability,_that.precipitationProbability6h);case _:
+return $default(_that.timestamp,_that.cloudCover,_that.condition,_that.dewPoint,_that.icon,_that.pressureMsl,_that.relativeHumidity,_that.temperature,_that.visibility,_that.precipitation,_that.solar,_that.sunshine,_that.windDirection,_that.windSpeed,_that.windGustDirection,_that.windGustSpeed,_that.precipitationProbability,_that.precipitationProbability6h);case _:
   return orElse();
 
 }
@@ -199,10 +197,10 @@ return $default(_that.timestamp,_that.sourceId,_that.cloudCover,_that.condition,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@WeatherDateTimeConverter()  DateTime timestamp,  int sourceId,  double? cloudCover,  WeatherConditionModel? condition,  double? dewPoint,  WeatherIconModel? icon,  double? pressureMsl,  int? relativeHumidity,  double? temperature,  int? visibility,  Map<String, int> fallbackSourceIds,  double? precipitation,  double? solar,  int? sunshine,  int? windDirection,  double? windSpeed,  int? windGustDirection,  double? windGustSpeed,  int? precipitationProbability,  int? precipitationProbability6h)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@WeatherDateTimeConverter()  DateTime timestamp,  double? cloudCover,  WeatherConditionModel? condition,  double? dewPoint,  WeatherIconModel? icon,  double? pressureMsl,  int? relativeHumidity,  double? temperature,  int? visibility,  double? precipitation,  double? solar,  int? sunshine,  int? windDirection,  double? windSpeed,  int? windGustDirection,  double? windGustSpeed,  int? precipitationProbability,  int? precipitationProbability6h)  $default,) {final _that = this;
 switch (_that) {
 case _HourlyWeatherModel():
-return $default(_that.timestamp,_that.sourceId,_that.cloudCover,_that.condition,_that.dewPoint,_that.icon,_that.pressureMsl,_that.relativeHumidity,_that.temperature,_that.visibility,_that.fallbackSourceIds,_that.precipitation,_that.solar,_that.sunshine,_that.windDirection,_that.windSpeed,_that.windGustDirection,_that.windGustSpeed,_that.precipitationProbability,_that.precipitationProbability6h);case _:
+return $default(_that.timestamp,_that.cloudCover,_that.condition,_that.dewPoint,_that.icon,_that.pressureMsl,_that.relativeHumidity,_that.temperature,_that.visibility,_that.precipitation,_that.solar,_that.sunshine,_that.windDirection,_that.windSpeed,_that.windGustDirection,_that.windGustSpeed,_that.precipitationProbability,_that.precipitationProbability6h);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -219,10 +217,10 @@ return $default(_that.timestamp,_that.sourceId,_that.cloudCover,_that.condition,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@WeatherDateTimeConverter()  DateTime timestamp,  int sourceId,  double? cloudCover,  WeatherConditionModel? condition,  double? dewPoint,  WeatherIconModel? icon,  double? pressureMsl,  int? relativeHumidity,  double? temperature,  int? visibility,  Map<String, int> fallbackSourceIds,  double? precipitation,  double? solar,  int? sunshine,  int? windDirection,  double? windSpeed,  int? windGustDirection,  double? windGustSpeed,  int? precipitationProbability,  int? precipitationProbability6h)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@WeatherDateTimeConverter()  DateTime timestamp,  double? cloudCover,  WeatherConditionModel? condition,  double? dewPoint,  WeatherIconModel? icon,  double? pressureMsl,  int? relativeHumidity,  double? temperature,  int? visibility,  double? precipitation,  double? solar,  int? sunshine,  int? windDirection,  double? windSpeed,  int? windGustDirection,  double? windGustSpeed,  int? precipitationProbability,  int? precipitationProbability6h)?  $default,) {final _that = this;
 switch (_that) {
 case _HourlyWeatherModel() when $default != null:
-return $default(_that.timestamp,_that.sourceId,_that.cloudCover,_that.condition,_that.dewPoint,_that.icon,_that.pressureMsl,_that.relativeHumidity,_that.temperature,_that.visibility,_that.fallbackSourceIds,_that.precipitation,_that.solar,_that.sunshine,_that.windDirection,_that.windSpeed,_that.windGustDirection,_that.windGustSpeed,_that.precipitationProbability,_that.precipitationProbability6h);case _:
+return $default(_that.timestamp,_that.cloudCover,_that.condition,_that.dewPoint,_that.icon,_that.pressureMsl,_that.relativeHumidity,_that.temperature,_that.visibility,_that.precipitation,_that.solar,_that.sunshine,_that.windDirection,_that.windSpeed,_that.windGustDirection,_that.windGustSpeed,_that.precipitationProbability,_that.precipitationProbability6h);case _:
   return null;
 
 }
@@ -234,11 +232,10 @@ return $default(_that.timestamp,_that.sourceId,_that.cloudCover,_that.condition,
 
 @JsonSerializable(fieldRename: FieldRename.snake)
 class _HourlyWeatherModel extends HourlyWeatherModel with DiagnosticableTreeMixin {
-  const _HourlyWeatherModel({@WeatherDateTimeConverter() required this.timestamp, required this.sourceId, this.cloudCover, this.condition, this.dewPoint, this.icon, this.pressureMsl, this.relativeHumidity, this.temperature, this.visibility, required final  Map<String, int> fallbackSourceIds, this.precipitation, this.solar, this.sunshine, this.windDirection, this.windSpeed, this.windGustDirection, this.windGustSpeed, this.precipitationProbability, this.precipitationProbability6h}): _fallbackSourceIds = fallbackSourceIds,super._();
+  const _HourlyWeatherModel({@WeatherDateTimeConverter() required this.timestamp, this.cloudCover, this.condition, this.dewPoint, this.icon, this.pressureMsl, this.relativeHumidity, this.temperature, this.visibility, this.precipitation, this.solar, this.sunshine, this.windDirection, this.windSpeed, this.windGustDirection, this.windGustSpeed, this.precipitationProbability, this.precipitationProbability6h}): super._();
   factory _HourlyWeatherModel.fromJson(Map<String, dynamic> json) => _$HourlyWeatherModelFromJson(json);
 
 @override@WeatherDateTimeConverter() final  DateTime timestamp;
-@override final  int sourceId;
 @override final  double? cloudCover;
 @override final  WeatherConditionModel? condition;
 @override final  double? dewPoint;
@@ -247,13 +244,6 @@ class _HourlyWeatherModel extends HourlyWeatherModel with DiagnosticableTreeMixi
 @override final  int? relativeHumidity;
 @override final  double? temperature;
 @override final  int? visibility;
- final  Map<String, int> _fallbackSourceIds;
-@override Map<String, int> get fallbackSourceIds {
-  if (_fallbackSourceIds is EqualUnmodifiableMapView) return _fallbackSourceIds;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_fallbackSourceIds);
-}
-
 @override final  double? precipitation;
 @override final  double? solar;
 @override final  int? sunshine;
@@ -278,21 +268,21 @@ Map<String, dynamic> toJson() {
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'HourlyWeatherModel'))
-    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('sourceId', sourceId))..add(DiagnosticsProperty('cloudCover', cloudCover))..add(DiagnosticsProperty('condition', condition))..add(DiagnosticsProperty('dewPoint', dewPoint))..add(DiagnosticsProperty('icon', icon))..add(DiagnosticsProperty('pressureMsl', pressureMsl))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('visibility', visibility))..add(DiagnosticsProperty('fallbackSourceIds', fallbackSourceIds))..add(DiagnosticsProperty('precipitation', precipitation))..add(DiagnosticsProperty('solar', solar))..add(DiagnosticsProperty('sunshine', sunshine))..add(DiagnosticsProperty('windDirection', windDirection))..add(DiagnosticsProperty('windSpeed', windSpeed))..add(DiagnosticsProperty('windGustDirection', windGustDirection))..add(DiagnosticsProperty('windGustSpeed', windGustSpeed))..add(DiagnosticsProperty('precipitationProbability', precipitationProbability))..add(DiagnosticsProperty('precipitationProbability6h', precipitationProbability6h));
+    ..add(DiagnosticsProperty('timestamp', timestamp))..add(DiagnosticsProperty('cloudCover', cloudCover))..add(DiagnosticsProperty('condition', condition))..add(DiagnosticsProperty('dewPoint', dewPoint))..add(DiagnosticsProperty('icon', icon))..add(DiagnosticsProperty('pressureMsl', pressureMsl))..add(DiagnosticsProperty('relativeHumidity', relativeHumidity))..add(DiagnosticsProperty('temperature', temperature))..add(DiagnosticsProperty('visibility', visibility))..add(DiagnosticsProperty('precipitation', precipitation))..add(DiagnosticsProperty('solar', solar))..add(DiagnosticsProperty('sunshine', sunshine))..add(DiagnosticsProperty('windDirection', windDirection))..add(DiagnosticsProperty('windSpeed', windSpeed))..add(DiagnosticsProperty('windGustDirection', windGustDirection))..add(DiagnosticsProperty('windGustSpeed', windGustSpeed))..add(DiagnosticsProperty('precipitationProbability', precipitationProbability))..add(DiagnosticsProperty('precipitationProbability6h', precipitationProbability6h));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HourlyWeatherModel&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.sourceId, sourceId) || other.sourceId == sourceId)&&(identical(other.cloudCover, cloudCover) || other.cloudCover == cloudCover)&&(identical(other.condition, condition) || other.condition == condition)&&(identical(other.dewPoint, dewPoint) || other.dewPoint == dewPoint)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.pressureMsl, pressureMsl) || other.pressureMsl == pressureMsl)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.visibility, visibility) || other.visibility == visibility)&&const DeepCollectionEquality().equals(other._fallbackSourceIds, _fallbackSourceIds)&&(identical(other.precipitation, precipitation) || other.precipitation == precipitation)&&(identical(other.solar, solar) || other.solar == solar)&&(identical(other.sunshine, sunshine) || other.sunshine == sunshine)&&(identical(other.windDirection, windDirection) || other.windDirection == windDirection)&&(identical(other.windSpeed, windSpeed) || other.windSpeed == windSpeed)&&(identical(other.windGustDirection, windGustDirection) || other.windGustDirection == windGustDirection)&&(identical(other.windGustSpeed, windGustSpeed) || other.windGustSpeed == windGustSpeed)&&(identical(other.precipitationProbability, precipitationProbability) || other.precipitationProbability == precipitationProbability)&&(identical(other.precipitationProbability6h, precipitationProbability6h) || other.precipitationProbability6h == precipitationProbability6h));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _HourlyWeatherModel&&(identical(other.timestamp, timestamp) || other.timestamp == timestamp)&&(identical(other.cloudCover, cloudCover) || other.cloudCover == cloudCover)&&(identical(other.condition, condition) || other.condition == condition)&&(identical(other.dewPoint, dewPoint) || other.dewPoint == dewPoint)&&(identical(other.icon, icon) || other.icon == icon)&&(identical(other.pressureMsl, pressureMsl) || other.pressureMsl == pressureMsl)&&(identical(other.relativeHumidity, relativeHumidity) || other.relativeHumidity == relativeHumidity)&&(identical(other.temperature, temperature) || other.temperature == temperature)&&(identical(other.visibility, visibility) || other.visibility == visibility)&&(identical(other.precipitation, precipitation) || other.precipitation == precipitation)&&(identical(other.solar, solar) || other.solar == solar)&&(identical(other.sunshine, sunshine) || other.sunshine == sunshine)&&(identical(other.windDirection, windDirection) || other.windDirection == windDirection)&&(identical(other.windSpeed, windSpeed) || other.windSpeed == windSpeed)&&(identical(other.windGustDirection, windGustDirection) || other.windGustDirection == windGustDirection)&&(identical(other.windGustSpeed, windGustSpeed) || other.windGustSpeed == windGustSpeed)&&(identical(other.precipitationProbability, precipitationProbability) || other.precipitationProbability == precipitationProbability)&&(identical(other.precipitationProbability6h, precipitationProbability6h) || other.precipitationProbability6h == precipitationProbability6h));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,timestamp,sourceId,cloudCover,condition,dewPoint,icon,pressureMsl,relativeHumidity,temperature,visibility,const DeepCollectionEquality().hash(_fallbackSourceIds),precipitation,solar,sunshine,windDirection,windSpeed,windGustDirection,windGustSpeed,precipitationProbability,precipitationProbability6h]);
+int get hashCode => Object.hash(runtimeType,timestamp,cloudCover,condition,dewPoint,icon,pressureMsl,relativeHumidity,temperature,visibility,precipitation,solar,sunshine,windDirection,windSpeed,windGustDirection,windGustSpeed,precipitationProbability,precipitationProbability6h);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'HourlyWeatherModel(timestamp: $timestamp, sourceId: $sourceId, cloudCover: $cloudCover, condition: $condition, dewPoint: $dewPoint, icon: $icon, pressureMsl: $pressureMsl, relativeHumidity: $relativeHumidity, temperature: $temperature, visibility: $visibility, fallbackSourceIds: $fallbackSourceIds, precipitation: $precipitation, solar: $solar, sunshine: $sunshine, windDirection: $windDirection, windSpeed: $windSpeed, windGustDirection: $windGustDirection, windGustSpeed: $windGustSpeed, precipitationProbability: $precipitationProbability, precipitationProbability6h: $precipitationProbability6h)';
+  return 'HourlyWeatherModel(timestamp: $timestamp, cloudCover: $cloudCover, condition: $condition, dewPoint: $dewPoint, icon: $icon, pressureMsl: $pressureMsl, relativeHumidity: $relativeHumidity, temperature: $temperature, visibility: $visibility, precipitation: $precipitation, solar: $solar, sunshine: $sunshine, windDirection: $windDirection, windSpeed: $windSpeed, windGustDirection: $windGustDirection, windGustSpeed: $windGustSpeed, precipitationProbability: $precipitationProbability, precipitationProbability6h: $precipitationProbability6h)';
 }
 
 
@@ -303,7 +293,7 @@ abstract mixin class _$HourlyWeatherModelCopyWith<$Res> implements $HourlyWeathe
   factory _$HourlyWeatherModelCopyWith(_HourlyWeatherModel value, $Res Function(_HourlyWeatherModel) _then) = __$HourlyWeatherModelCopyWithImpl;
 @override @useResult
 $Res call({
-@WeatherDateTimeConverter() DateTime timestamp, int sourceId, double? cloudCover, WeatherConditionModel? condition, double? dewPoint, WeatherIconModel? icon, double? pressureMsl, int? relativeHumidity, double? temperature, int? visibility, Map<String, int> fallbackSourceIds, double? precipitation, double? solar, int? sunshine, int? windDirection, double? windSpeed, int? windGustDirection, double? windGustSpeed, int? precipitationProbability, int? precipitationProbability6h
+@WeatherDateTimeConverter() DateTime timestamp, double? cloudCover, WeatherConditionModel? condition, double? dewPoint, WeatherIconModel? icon, double? pressureMsl, int? relativeHumidity, double? temperature, int? visibility, double? precipitation, double? solar, int? sunshine, int? windDirection, double? windSpeed, int? windGustDirection, double? windGustSpeed, int? precipitationProbability, int? precipitationProbability6h
 });
 
 
@@ -320,11 +310,10 @@ class __$HourlyWeatherModelCopyWithImpl<$Res>
 
 /// Create a copy of HourlyWeatherModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? timestamp = null,Object? sourceId = null,Object? cloudCover = freezed,Object? condition = freezed,Object? dewPoint = freezed,Object? icon = freezed,Object? pressureMsl = freezed,Object? relativeHumidity = freezed,Object? temperature = freezed,Object? visibility = freezed,Object? fallbackSourceIds = null,Object? precipitation = freezed,Object? solar = freezed,Object? sunshine = freezed,Object? windDirection = freezed,Object? windSpeed = freezed,Object? windGustDirection = freezed,Object? windGustSpeed = freezed,Object? precipitationProbability = freezed,Object? precipitationProbability6h = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? timestamp = null,Object? cloudCover = freezed,Object? condition = freezed,Object? dewPoint = freezed,Object? icon = freezed,Object? pressureMsl = freezed,Object? relativeHumidity = freezed,Object? temperature = freezed,Object? visibility = freezed,Object? precipitation = freezed,Object? solar = freezed,Object? sunshine = freezed,Object? windDirection = freezed,Object? windSpeed = freezed,Object? windGustDirection = freezed,Object? windGustSpeed = freezed,Object? precipitationProbability = freezed,Object? precipitationProbability6h = freezed,}) {
   return _then(_HourlyWeatherModel(
 timestamp: null == timestamp ? _self.timestamp : timestamp // ignore: cast_nullable_to_non_nullable
-as DateTime,sourceId: null == sourceId ? _self.sourceId : sourceId // ignore: cast_nullable_to_non_nullable
-as int,cloudCover: freezed == cloudCover ? _self.cloudCover : cloudCover // ignore: cast_nullable_to_non_nullable
+as DateTime,cloudCover: freezed == cloudCover ? _self.cloudCover : cloudCover // ignore: cast_nullable_to_non_nullable
 as double?,condition: freezed == condition ? _self.condition : condition // ignore: cast_nullable_to_non_nullable
 as WeatherConditionModel?,dewPoint: freezed == dewPoint ? _self.dewPoint : dewPoint // ignore: cast_nullable_to_non_nullable
 as double?,icon: freezed == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
@@ -332,8 +321,7 @@ as WeatherIconModel?,pressureMsl: freezed == pressureMsl ? _self.pressureMsl : p
 as double?,relativeHumidity: freezed == relativeHumidity ? _self.relativeHumidity : relativeHumidity // ignore: cast_nullable_to_non_nullable
 as int?,temperature: freezed == temperature ? _self.temperature : temperature // ignore: cast_nullable_to_non_nullable
 as double?,visibility: freezed == visibility ? _self.visibility : visibility // ignore: cast_nullable_to_non_nullable
-as int?,fallbackSourceIds: null == fallbackSourceIds ? _self._fallbackSourceIds : fallbackSourceIds // ignore: cast_nullable_to_non_nullable
-as Map<String, int>,precipitation: freezed == precipitation ? _self.precipitation : precipitation // ignore: cast_nullable_to_non_nullable
+as int?,precipitation: freezed == precipitation ? _self.precipitation : precipitation // ignore: cast_nullable_to_non_nullable
 as double?,solar: freezed == solar ? _self.solar : solar // ignore: cast_nullable_to_non_nullable
 as double?,sunshine: freezed == sunshine ? _self.sunshine : sunshine // ignore: cast_nullable_to_non_nullable
 as int?,windDirection: freezed == windDirection ? _self.windDirection : windDirection // ignore: cast_nullable_to_non_nullable

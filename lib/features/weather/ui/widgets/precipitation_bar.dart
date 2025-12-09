@@ -4,6 +4,8 @@ import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
 import 'package:weather/features/weather/ui/utils/step_gradient.dart';
 
 import '../../../../core/theme/theme.dart';
+import '../../../../shared/widgets/weather_icon.dart';
+import '../../../location/domain/entities/location_entity.dart';
 import '../../domain/entities/weather_entity.dart';
 import '../providers/weather_providers.dart';
 
@@ -11,9 +13,11 @@ class PrecipitationBar extends ConsumerWidget {
   const PrecipitationBar({
     super.key,
     required this.weather,
+    required this.location,
   });
 
   final HourlyWeatherEntity weather;
+  final LocationEntity location;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -39,6 +43,11 @@ class PrecipitationBar extends ConsumerWidget {
                   ? "${temperature.toStringAsFixed(0)}°"
                   : "-",
               style: TextStyles.numberSmall,
+            ),
+            WeatherIcon(
+              weather: weather,
+              location: location,
+              size: 50,
             ),
             Text(
               "${weather.timestamp.hour.toString().padLeft(2, '0')}:00",

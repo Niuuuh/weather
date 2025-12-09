@@ -8,7 +8,7 @@ part 'hourly_weather_parameters_model.g.dart';
 
 @freezed
 abstract class HourlyWeatherParametersModel with _$HourlyWeatherParametersModel {
-  @JsonSerializable(fieldRename: FieldRename.snake)
+  @JsonSerializable(fieldRename: FieldRename.snake, includeIfNull: false)
   const factory HourlyWeatherParametersModel({
     required double lat,
     required double lon,
