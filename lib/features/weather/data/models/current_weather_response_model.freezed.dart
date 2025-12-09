@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CurrentWeatherResponseModel implements DiagnosticableTreeMixin {
 
- WeatherModel get weather; List<SourceModel> get sources;
+ CurrentWeatherModel get weather; List<SourceModel> get sources;
 /// Create a copy of CurrentWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -54,11 +54,11 @@ abstract mixin class $CurrentWeatherResponseModelCopyWith<$Res>  {
   factory $CurrentWeatherResponseModelCopyWith(CurrentWeatherResponseModel value, $Res Function(CurrentWeatherResponseModel) _then) = _$CurrentWeatherResponseModelCopyWithImpl;
 @useResult
 $Res call({
- WeatherModel weather, List<SourceModel> sources
+ CurrentWeatherModel weather, List<SourceModel> sources
 });
 
 
-$WeatherModelCopyWith<$Res> get weather;
+$CurrentWeatherModelCopyWith<$Res> get weather;
 
 }
 /// @nodoc
@@ -74,7 +74,7 @@ class _$CurrentWeatherResponseModelCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? weather = null,Object? sources = null,}) {
   return _then(_self.copyWith(
 weather: null == weather ? _self.weather : weather // ignore: cast_nullable_to_non_nullable
-as WeatherModel,sources: null == sources ? _self.sources : sources // ignore: cast_nullable_to_non_nullable
+as CurrentWeatherModel,sources: null == sources ? _self.sources : sources // ignore: cast_nullable_to_non_nullable
 as List<SourceModel>,
   ));
 }
@@ -82,9 +82,9 @@ as List<SourceModel>,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$WeatherModelCopyWith<$Res> get weather {
+$CurrentWeatherModelCopyWith<$Res> get weather {
   
-  return $WeatherModelCopyWith<$Res>(_self.weather, (value) {
+  return $CurrentWeatherModelCopyWith<$Res>(_self.weather, (value) {
     return _then(_self.copyWith(weather: value));
   });
 }
@@ -169,7 +169,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( WeatherModel weather,  List<SourceModel> sources)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( CurrentWeatherModel weather,  List<SourceModel> sources)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CurrentWeatherResponseModel() when $default != null:
 return $default(_that.weather,_that.sources);case _:
@@ -190,7 +190,7 @@ return $default(_that.weather,_that.sources);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( WeatherModel weather,  List<SourceModel> sources)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( CurrentWeatherModel weather,  List<SourceModel> sources)  $default,) {final _that = this;
 switch (_that) {
 case _CurrentWeatherResponseModel():
 return $default(_that.weather,_that.sources);case _:
@@ -210,7 +210,7 @@ return $default(_that.weather,_that.sources);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( WeatherModel weather,  List<SourceModel> sources)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( CurrentWeatherModel weather,  List<SourceModel> sources)?  $default,) {final _that = this;
 switch (_that) {
 case _CurrentWeatherResponseModel() when $default != null:
 return $default(_that.weather,_that.sources);case _:
@@ -224,11 +224,11 @@ return $default(_that.weather,_that.sources);case _:
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _CurrentWeatherResponseModel with DiagnosticableTreeMixin implements CurrentWeatherResponseModel {
-  const _CurrentWeatherResponseModel({required this.weather, required final  List<SourceModel> sources}): _sources = sources;
+class _CurrentWeatherResponseModel extends CurrentWeatherResponseModel with DiagnosticableTreeMixin {
+  const _CurrentWeatherResponseModel({required this.weather, required final  List<SourceModel> sources}): _sources = sources,super._();
   factory _CurrentWeatherResponseModel.fromJson(Map<String, dynamic> json) => _$CurrentWeatherResponseModelFromJson(json);
 
-@override final  WeatherModel weather;
+@override final  CurrentWeatherModel weather;
  final  List<SourceModel> _sources;
 @override List<SourceModel> get sources {
   if (_sources is EqualUnmodifiableListView) return _sources;
@@ -276,11 +276,11 @@ abstract mixin class _$CurrentWeatherResponseModelCopyWith<$Res> implements $Cur
   factory _$CurrentWeatherResponseModelCopyWith(_CurrentWeatherResponseModel value, $Res Function(_CurrentWeatherResponseModel) _then) = __$CurrentWeatherResponseModelCopyWithImpl;
 @override @useResult
 $Res call({
- WeatherModel weather, List<SourceModel> sources
+ CurrentWeatherModel weather, List<SourceModel> sources
 });
 
 
-@override $WeatherModelCopyWith<$Res> get weather;
+@override $CurrentWeatherModelCopyWith<$Res> get weather;
 
 }
 /// @nodoc
@@ -296,7 +296,7 @@ class __$CurrentWeatherResponseModelCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? weather = null,Object? sources = null,}) {
   return _then(_CurrentWeatherResponseModel(
 weather: null == weather ? _self.weather : weather // ignore: cast_nullable_to_non_nullable
-as WeatherModel,sources: null == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
+as CurrentWeatherModel,sources: null == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
 as List<SourceModel>,
   ));
 }
@@ -305,9 +305,9 @@ as List<SourceModel>,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$WeatherModelCopyWith<$Res> get weather {
+$CurrentWeatherModelCopyWith<$Res> get weather {
   
-  return $WeatherModelCopyWith<$Res>(_self.weather, (value) {
+  return $CurrentWeatherModelCopyWith<$Res>(_self.weather, (value) {
     return _then(_self.copyWith(weather: value));
   });
 }

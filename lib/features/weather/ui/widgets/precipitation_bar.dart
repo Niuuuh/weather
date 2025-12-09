@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:weather/features/weather/ui/widgets/step_gradient.dart';
+import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
+import 'package:weather/features/weather/ui/utils/step_gradient.dart';
 
 import '../../../../core/theme/theme.dart';
-import '../../domain/entities/weather_prediction_entity.dart';
+import '../../domain/entities/weather_entity.dart';
 import '../providers/weather_providers.dart';
 
 class PrecipitationBar extends ConsumerWidget {
@@ -12,7 +13,7 @@ class PrecipitationBar extends ConsumerWidget {
     required this.weather,
   });
 
-  final WeatherPredictionEntity weather;
+  final HourlyWeatherEntity weather;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,7 +25,7 @@ class PrecipitationBar extends ConsumerWidget {
         gradient: StepGradient(
           foreground: AppColors.wet,
           background: AppColors.container,
-          step: weather.normalizedPrecipitationProbability ?? 0,
+          step: weather.normalizedPrecipitation,
         ),
       ),
       child: Padding(

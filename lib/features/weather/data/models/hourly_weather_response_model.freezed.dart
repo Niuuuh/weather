@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$HourlyWeatherResponseModel implements DiagnosticableTreeMixin {
 
- List<WeatherModel> get weather; List<SourceModel> get sources;
+ List<HourlyWeatherModel> get weather; List<SourceModel> get sources;
 /// Create a copy of HourlyWeatherResponseModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -54,7 +54,7 @@ abstract mixin class $HourlyWeatherResponseModelCopyWith<$Res>  {
   factory $HourlyWeatherResponseModelCopyWith(HourlyWeatherResponseModel value, $Res Function(HourlyWeatherResponseModel) _then) = _$HourlyWeatherResponseModelCopyWithImpl;
 @useResult
 $Res call({
- List<WeatherModel> weather, List<SourceModel> sources
+ List<HourlyWeatherModel> weather, List<SourceModel> sources
 });
 
 
@@ -74,7 +74,7 @@ class _$HourlyWeatherResponseModelCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? weather = null,Object? sources = null,}) {
   return _then(_self.copyWith(
 weather: null == weather ? _self.weather : weather // ignore: cast_nullable_to_non_nullable
-as List<WeatherModel>,sources: null == sources ? _self.sources : sources // ignore: cast_nullable_to_non_nullable
+as List<HourlyWeatherModel>,sources: null == sources ? _self.sources : sources // ignore: cast_nullable_to_non_nullable
 as List<SourceModel>,
   ));
 }
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<WeatherModel> weather,  List<SourceModel> sources)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<HourlyWeatherModel> weather,  List<SourceModel> sources)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _HourlyWeatherResponseModel() when $default != null:
 return $default(_that.weather,_that.sources);case _:
@@ -181,7 +181,7 @@ return $default(_that.weather,_that.sources);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<WeatherModel> weather,  List<SourceModel> sources)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<HourlyWeatherModel> weather,  List<SourceModel> sources)  $default,) {final _that = this;
 switch (_that) {
 case _HourlyWeatherResponseModel():
 return $default(_that.weather,_that.sources);case _:
@@ -201,7 +201,7 @@ return $default(_that.weather,_that.sources);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<WeatherModel> weather,  List<SourceModel> sources)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<HourlyWeatherModel> weather,  List<SourceModel> sources)?  $default,) {final _that = this;
 switch (_that) {
 case _HourlyWeatherResponseModel() when $default != null:
 return $default(_that.weather,_that.sources);case _:
@@ -215,12 +215,12 @@ return $default(_that.weather,_that.sources);case _:
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _HourlyWeatherResponseModel with DiagnosticableTreeMixin implements HourlyWeatherResponseModel {
-  const _HourlyWeatherResponseModel({required final  List<WeatherModel> weather, required final  List<SourceModel> sources}): _weather = weather,_sources = sources;
+class _HourlyWeatherResponseModel extends HourlyWeatherResponseModel with DiagnosticableTreeMixin {
+  const _HourlyWeatherResponseModel({required final  List<HourlyWeatherModel> weather, required final  List<SourceModel> sources}): _weather = weather,_sources = sources,super._();
   factory _HourlyWeatherResponseModel.fromJson(Map<String, dynamic> json) => _$HourlyWeatherResponseModelFromJson(json);
 
- final  List<WeatherModel> _weather;
-@override List<WeatherModel> get weather {
+ final  List<HourlyWeatherModel> _weather;
+@override List<HourlyWeatherModel> get weather {
   if (_weather is EqualUnmodifiableListView) return _weather;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_weather);
@@ -273,7 +273,7 @@ abstract mixin class _$HourlyWeatherResponseModelCopyWith<$Res> implements $Hour
   factory _$HourlyWeatherResponseModelCopyWith(_HourlyWeatherResponseModel value, $Res Function(_HourlyWeatherResponseModel) _then) = __$HourlyWeatherResponseModelCopyWithImpl;
 @override @useResult
 $Res call({
- List<WeatherModel> weather, List<SourceModel> sources
+ List<HourlyWeatherModel> weather, List<SourceModel> sources
 });
 
 
@@ -293,7 +293,7 @@ class __$HourlyWeatherResponseModelCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? weather = null,Object? sources = null,}) {
   return _then(_HourlyWeatherResponseModel(
 weather: null == weather ? _self._weather : weather // ignore: cast_nullable_to_non_nullable
-as List<WeatherModel>,sources: null == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
+as List<HourlyWeatherModel>,sources: null == sources ? _self._sources : sources // ignore: cast_nullable_to_non_nullable
 as List<SourceModel>,
   ));
 }

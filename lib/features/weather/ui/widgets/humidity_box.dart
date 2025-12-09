@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weather/features/weather/domain/entities/current_weather_entity.dart';
-import 'package:weather/features/weather/domain/utils/current_weather_extension.dart';
-import 'package:weather/features/weather/ui/widgets/step_gradient.dart';
+import 'package:weather/features/weather/domain/entities/weather_entity.dart';
+import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
+import 'package:weather/features/weather/ui/utils/step_gradient.dart';
 
 import '../../../../core/theme/theme.dart';
 

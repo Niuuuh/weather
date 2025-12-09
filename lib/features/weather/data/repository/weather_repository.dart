@@ -1,11 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:weather/features/weather/data/models/current_weather_parameters_model.dart';
 
-import '../../domain/entities/current_weather_entity.dart';
-import '../../domain/entities/weather_prediction_entity.dart';
+import '../../domain/entities/weather_entity.dart';
 import '../../domain/errors/weather_error.dart';
-import '../mappers/current_weather_mapper.dart';
-import '../mappers/hourly_weather_mapper.dart';
 import '../models/hourly_weather_parameters_model.dart';
 import '../sources/weather_api.dart';
 
@@ -25,14 +22,14 @@ class WeatherRepository {
           lon: longitude,
         ),
       );
-      return CurrentWeatherMapper.toEntity(model);
+      return model.toEntity();
     } catch (e) {
       if (kDebugMode) rethrow;
       throw WeatherError();
     }
   }
 
-  Future<List<WeatherPredictionEntity>> getHourlyWeather({
+  Future<List<HourlyWeatherEntity>> getHourlyWeather({
     required double latitude,
     required double longitude,
     required DateTime date,
@@ -45,7 +42,7 @@ class WeatherRepository {
           date: date,
         ),
       );
-      return HourlyWeatherMapper.toEntity(model);
+      return model.toEntity();
     } catch (e) {
       if (kDebugMode) rethrow;
       throw WeatherError();

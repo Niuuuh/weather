@@ -1,9 +1,7 @@
-import 'dart:math';
-
+import 'package:weather/features/weather/data/repository/weather_mock.dart';
 import 'package:weather/features/weather/data/repository/weather_repository.dart';
 
-import '../../domain/entities/current_weather_entity.dart';
-import '../../domain/entities/weather_prediction_entity.dart';
+import '../../domain/entities/weather_entity.dart';
 import '../sources/weather_api.dart';
 
 class MockWeatherRepository implements WeatherRepository {
@@ -16,29 +14,64 @@ class MockWeatherRepository implements WeatherRepository {
     required double longitude,
   }) async {
     await Future.delayed(Duration(milliseconds: 2000));
+
+    final date = DateTime.now();
+    final seed = Object.hash(longitude, latitude, date);
+    final mock = WeatherMock(seed);
+
     return CurrentWeatherEntity(
       timestamp: DateTime.now(),
-      temperature: Random().nextDouble() * 20,
-      relativeHumidity: Random().nextInt(100),
-      pressure: 980 + Random().nextDouble() * 40,
-      stationName: "Mock Weather Station",
-      distance: Random().nextInt(10000),
+      cloudCover: mock.cloudCover(),
+      condition: mock.condition(),
+      dewPoint: mock.dewPoint(),
+      icon: mock.icon(),
+      pressure: mock.pressureMsl(),
+      relativeHumidity: mock.relativeHumidity(),
+      temperature: mock.temperature(),
+      visibility: mock.visibility(),
+      precipitation: mock.precipitation(),
+      solarIrradiation: mock.solarIrradiation(),
+      sunshineDuration: mock.sunshineDuration(),
+      windDirection: mock.windDirection(),
+      windSpeed: mock.windSpeed(),
+      windGustDirection: mock.windGustDirection(),
+      windGustSpeed: mock.windGustSpeed(),
+      stationName: mock.stationName(),
+      distance: mock.distance(),
     );
   }
 
   @override
-  Future<List<WeatherPredictionEntity>> getHourlyWeather({
+  Future<List<HourlyWeatherEntity>> getHourlyWeather({
     required double latitude,
     required double longitude,
     required DateTime date,
   }) async {
     await Future.delayed(Duration(milliseconds: 1000));
+
+    final seed = Object.hash(longitude, latitude, date);
+    final mock = WeatherMock(seed);
+
     return [
       for (int i = 0; i < 24; i++)
-        WeatherPredictionEntity(
+        HourlyWeatherEntity(
           timestamp: date.add(Duration(hours: i)),
-          temperature: Random().nextDouble() * 20,
-          precipitationProbability: Random().nextInt(100),
+          cloudCover: mock.cloudCover(),
+          condition: mock.condition(),
+          dewPoint: mock.dewPoint(),
+          icon: mock.icon(),
+          pressure: mock.pressureMsl(),
+          relativeHumidity: mock.relativeHumidity(),
+          temperature: mock.temperature(),
+          visibility: mock.visibility(),
+          precipitation: mock.precipitation(),
+          solarIrradiation: mock.solarIrradiation(),
+          sunshineDuration: mock.sunshineDuration(),
+          windDirection: mock.windDirection(),
+          windSpeed: mock.windSpeed(),
+          windGustDirection: mock.windGustDirection(),
+          windGustSpeed: mock.windGustSpeed(),
+          precipitationProbability: mock.precipitationProbability(),
         ),
     ];
   }
