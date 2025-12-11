@@ -18,6 +18,13 @@ extension CurrentWeatherExtension on CurrentWeatherEntity {
     }
     return PressureMapper.toNormalized(pressure!);
   }
+
+  double get normalizedTemperature {
+    if (temperature == null) {
+      return 0.0;
+    }
+    return temperature!.clamp(0, 30) / 30;
+  }
 }
 
 extension WeatherPredictionExtension on HourlyWeatherEntity {

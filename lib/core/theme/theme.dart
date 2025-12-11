@@ -8,6 +8,8 @@ abstract class AppColors {
   static const onContainerVariant = Color(0x80ffffff);
   static const wet = Color(0xff172e4a);
   static const dry = Color(0xff463811);
+  static const cold = Color(0xff374151);
+  static const warm = Color(0xff463811);
 }
 
 abstract class BorderRadii {

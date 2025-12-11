@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
 
 import '../../../../core/theme/theme.dart';
 import '../../../../shared/providers/shared_providers.dart';
@@ -27,7 +28,11 @@ class WeatherCard extends ConsumerWidget {
     return AspectRatio(
       aspectRatio: 368 / 312,
       child: Material(
-        color: AppColors.dry,
+        color: Color.lerp(
+          AppColors.cold,
+          AppColors.warm,
+          weather.normalizedTemperature,
+        ),
         borderRadius: BorderRadii.large,
         child: Stack(
           children: [
