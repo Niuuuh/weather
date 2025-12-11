@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather/core/routing/navigation_helper.dart';
 
-// does this belong to /shared?
 class SettingsButton extends StatelessWidget {
   const SettingsButton({super.key});
 

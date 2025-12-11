@@ -14,6 +14,5 @@ sealed class LocationEntity with _$LocationEntity {
     required double latitude,
     required double longitude,
     required String id,
-    required String name,
   }) = StaticLocationEntity;
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/features/weather/ui/widgets/humidity_box.dart';
 
+import '../../../../i18n/strings.g.dart';
 import '../../../../shared/services/error_service.dart';
 import '../../../../shared/widgets/bone.dart';
 import '../../../location/domain/entities/location_entity.dart';
@@ -40,8 +41,11 @@ class LocationDetailPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: location.map(
-          dynamic: (_) => Text("Current Location"),
-          static: (staticLocation) => Text(staticLocation.name),
+          dynamic: (_) => Text(context.t.location.current),
+          static: (staticLocation) => Text(
+            context.t.location.locations[staticLocation.id]
+                ?? context.t.location.unknown,
+          ),
         ),
       ),
       body: SafeArea(

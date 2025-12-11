@@ -4,6 +4,7 @@ import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
 import 'package:weather/features/weather/ui/utils/step_gradient.dart';
 
 import '../../../../core/theme/theme.dart';
+import '../../../../i18n/strings.g.dart';
 
 class HumidityBox extends StatelessWidget {
   const HumidityBox({
@@ -35,7 +36,7 @@ class HumidityBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Luftfeuchtigkeit",
+              context.t.weather.humidity,
               style: TextStyles.subtitleMedium,
             ),
             SizedBox(height: 8),
@@ -47,7 +48,7 @@ class HumidityBox extends StatelessWidget {
                     Text(
                       weather.relativeHumidity != null
                           ? weather.relativeHumidity!.toStringAsFixed(0)
-                          : "-",
+                          : context.t.weather.empty,
                       style: TextStyles.numberMedium.copyWith(
                         height: 1,
                       ),

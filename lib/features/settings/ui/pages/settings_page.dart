@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../i18n/strings.g.dart';
 import '../widgets/temperature_unit_button.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -9,12 +10,12 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text(context.t.settings.title),
       ),
       body: SafeArea(
         child: ListView(
           children: [
-            Text("Temperature unit"),
+            Text(context.t.settings.temperatureUnit.title),
             Align(
               alignment: Alignment.centerLeft,
               child: TemperatureUnitButton(),

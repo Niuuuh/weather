@@ -157,11 +157,11 @@ return static(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( double latitude,  double longitude)?  dynamic,TResult Function( double latitude,  double longitude,  String id,  String name)?  static,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( double latitude,  double longitude)?  dynamic,TResult Function( double latitude,  double longitude,  String id)?  static,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case DynamicLocationEntity() when dynamic != null:
 return dynamic(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
-return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
+return static(_that.latitude,_that.longitude,_that.id);case _:
   return orElse();
 
 }
@@ -179,11 +179,11 @@ return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( double latitude,  double longitude)  dynamic,required TResult Function( double latitude,  double longitude,  String id,  String name)  static,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( double latitude,  double longitude)  dynamic,required TResult Function( double latitude,  double longitude,  String id)  static,}) {final _that = this;
 switch (_that) {
 case DynamicLocationEntity():
 return dynamic(_that.latitude,_that.longitude);case StaticLocationEntity():
-return static(_that.latitude,_that.longitude,_that.id,_that.name);}
+return static(_that.latitude,_that.longitude,_that.id);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -197,11 +197,11 @@ return static(_that.latitude,_that.longitude,_that.id,_that.name);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( double latitude,  double longitude)?  dynamic,TResult? Function( double latitude,  double longitude,  String id,  String name)?  static,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( double latitude,  double longitude)?  dynamic,TResult? Function( double latitude,  double longitude,  String id)?  static,}) {final _that = this;
 switch (_that) {
 case DynamicLocationEntity() when dynamic != null:
 return dynamic(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
-return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
+return static(_that.latitude,_that.longitude,_that.id);case _:
   return null;
 
 }
@@ -287,13 +287,12 @@ as double,
 
 
 class StaticLocationEntity with DiagnosticableTreeMixin implements LocationEntity {
-  const StaticLocationEntity({required this.latitude, required this.longitude, required this.id, required this.name});
+  const StaticLocationEntity({required this.latitude, required this.longitude, required this.id});
   
 
 @override final  double latitude;
 @override final  double longitude;
  final  String id;
- final  String name;
 
 /// Create a copy of LocationEntity
 /// with the given fields replaced by the non-null parameter values.
@@ -306,21 +305,21 @@ $StaticLocationEntityCopyWith<StaticLocationEntity> get copyWith => _$StaticLoca
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'LocationEntity.static'))
-    ..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude))..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name));
+    ..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude))..add(DiagnosticsProperty('id', id));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StaticLocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StaticLocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude)&&(identical(other.id, id) || other.id == id));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,latitude,longitude,id,name);
+int get hashCode => Object.hash(runtimeType,latitude,longitude,id);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LocationEntity.static(latitude: $latitude, longitude: $longitude, id: $id, name: $name)';
+  return 'LocationEntity.static(latitude: $latitude, longitude: $longitude, id: $id)';
 }
 
 
@@ -331,7 +330,7 @@ abstract mixin class $StaticLocationEntityCopyWith<$Res> implements $LocationEnt
   factory $StaticLocationEntityCopyWith(StaticLocationEntity value, $Res Function(StaticLocationEntity) _then) = _$StaticLocationEntityCopyWithImpl;
 @override @useResult
 $Res call({
- double latitude, double longitude, String id, String name
+ double latitude, double longitude, String id
 });
 
 
@@ -348,12 +347,11 @@ class _$StaticLocationEntityCopyWithImpl<$Res>
 
 /// Create a copy of LocationEntity
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,Object? id = null,Object? name = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,Object? id = null,}) {
   return _then(StaticLocationEntity(
 latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

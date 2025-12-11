@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../../../../core/theme/theme.dart';
+import '../../../../i18n/strings.g.dart';
 import '../../../../shared/widgets/bone.dart';
 import '../../domain/entities/location_entity.dart';
 import '../providers/location_providers.dart';
@@ -28,22 +29,22 @@ class CurrentLocationListTile extends StatelessWidget {
           data: (locationState) {
             return switch (locationState) {
               LocationStateDisabled() => LocationErrorListTile(
-                title: Text("Location services disabled"),
-                subtitle: Text("Please enable services to get weather for your current location."),
+                title: Text(context.t.location.state.disabled.title),
+                subtitle: Text(context.t.location.state.disabled.subtitle),
                 actions: [
                   RetryButton(),
                 ],
               ),
               LocationStateDenied() => LocationErrorListTile(
-                title: Text("Location permission denied"),
-                subtitle: Text("Please grant permission to get weather for your current location."),
+                title: Text(context.t.location.state.denied.title),
+                subtitle: Text(context.t.location.state.denied.subtitle),
                 actions: [
                   RetryButton(),
                 ],
               ),
               LocationStateDeniedForever() => LocationErrorListTile(
-                title: Text("Location permission denied"),
-                subtitle: Text("Please enable permission from settings to get weather for your current location."),
+                title: Text(context.t.location.state.deniedForever.title),
+                subtitle: Text(context.t.location.state.deniedForever.subtitle),
                 actions: [
                   if (!kIsWeb) OpenSettingsButton(),
                   RetryButton(),
@@ -74,7 +75,7 @@ class OpenSettingsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () => openAppSettings(),
-      child: Text("Open Settings"),
+      child: Text(context.t.location.openSettings),
     );
   }
 }
@@ -90,7 +91,7 @@ class RetryButton extends ConsumerWidget {
       onPressed: () {
         ref.read(locationControllerProvider.notifier).fetchLocation();
       },
-      child: Text("Retry"),
+      child: Text(context.t.location.retry),
     );
   }
 }

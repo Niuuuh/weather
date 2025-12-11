@@ -1,0 +1,37 @@
+{
+  "location": {
+    "locations(map)": {
+      "karlsruhe": "Karlsruhe",
+      "saarbruecken": "Saarbrücken Bürgerpark"
+    },
+    "unknown": "Unknown Location",
+    "current": "Current Location",
+    "state": {
+      "disabled": {
+        "title": "Location services disabled",
+        "subtitle": "Please enable services to get weather for your current location."
+      },
+      "denied": {
+        "title": "Location permission denied",
+        "subtitle": "Please grant permission to get weather for your current location."
+      },
+      "deniedForever": {
+        "title": "Location permission denied",
+        "subtitle": "Please enable permission from settings to get weather for your current location."
+      }
+    },
+    "openSettings": "Open Settings",
+    "retry": "Retry"
+  },
+  "weather": {
+    "humidity": "Luftfeuchtigkeit",
+    "pressure": "Pressure",
+    "empty": "-"
+  },
+  "settings": {
+    "title": "Settings",
+    "temperatureUnit": {
+      "title": "Temperature Unit"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
 import 'package:weather/features/weather/ui/utils/step_gradient.dart';
 
 import '../../../../core/theme/theme.dart';
+import '../../../../i18n/strings.g.dart';
 import '../../../../shared/widgets/weather_icon.dart';
 import '../../../location/domain/entities/location_entity.dart';
 import '../../domain/entities/weather_entity.dart';
@@ -41,7 +42,7 @@ class PrecipitationBar extends ConsumerWidget {
             Text(
               temperature != null
                   ? "${temperature.toStringAsFixed(0)}°"
-                  : "-",
+                  : context.t.weather.empty,
               style: TextStyles.numberSmall,
             ),
             WeatherIcon(

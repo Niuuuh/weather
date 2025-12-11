@@ -1,0 +1,37 @@
+{
+  "location": {
+    "locations(map)": {
+      "karlsruhe": "Karlsruhe",
+      "saarbruecken": "Saarbrücken Bürgerpark"
+    },
+    "unknown": "Unbekannter Ort",
+    "current": "Aktueller Standort",
+    "state": {
+      "disabled": {
+        "title": "Standortdienste deaktiviert",
+        "subtitle": "Bitte aktiviere den Service, um das Wetter für deinen aktuellen Standort zu erhalten."
+      },
+      "denied": {
+        "title": "Standortberechtigung verweigert",
+        "subtitle": "Bitte erteile die Berechtigung, um das Wetter für deinen aktuellen Standort zu erhalten."
+      },
+      "deniedForever": {
+        "title": "Standortberechtigung verweigert",
+        "subtitle": "Bitte aktiviere die Berechtigung in den Einstellungen, um das Wetter für deinen aktuellen Standort zu erhalten."
+      }
+    },
+    "openSettings": "Einstellungen öffnen",
+    "retry": "Erneut versuchen"
+  },
+  "weather": {
+    "humidity": "Luftfeuchtigkeit",
+    "pressure": "Luftdruck",
+    "empty": "-"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "temperatureUnit": {
+      "title": "Temperatureinheit"
+    }
+  }
+}

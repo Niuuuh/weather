@@ -4,6 +4,7 @@ import 'package:weather/features/weather/ui/extensions/weather_extension.dart';
 import 'package:weather/features/weather/ui/utils/step_gradient.dart';
 
 import '../../../../core/theme/theme.dart';
+import '../../../../i18n/strings.g.dart';
 
 class PressureBox extends StatelessWidget {
   const PressureBox({
@@ -35,7 +36,7 @@ class PressureBox extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Luftdruck",
+              context.t.weather.pressure,
               style: TextStyles.subtitleMedium,
             ),
             SizedBox(height: 8),
@@ -47,7 +48,7 @@ class PressureBox extends StatelessWidget {
                     Text(
                       weather.pressure != null
                           ? weather.pressure!.toStringAsFixed(0)
-                          : "-",
+                          : context.t.weather.empty,
                       style: TextStyles.numberMedium.copyWith(
                         height: 1,
                       ),

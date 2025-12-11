@@ -14,45 +14,50 @@ abstract class BorderRadii {
   static const large = BorderRadius.all(Radius.circular(24));
 }
 
+abstract class FontFamilies {
+  static const kronaOne = "KronaOne";
+  static const inter = "Inter";
+}
+
 abstract class TextStyles {
   static const numberSmall = TextStyle(
-    fontFamily: "KronaOne",
+    fontFamily: FontFamilies.kronaOne,
     fontSize: 22,
     color: AppColors.onBackground,
   );
   static const numberMedium = TextStyle(
-    fontFamily: "KronaOne",
+    fontFamily: FontFamilies.kronaOne,
     fontSize: 44,
     color: AppColors.onBackground,
   );
   static const numberLarge = TextStyle(
-    fontFamily: "KronaOne",
+    fontFamily: FontFamilies.kronaOne,
     fontSize: 88,
     color: AppColors.onBackground,
   );
   static const unitMedium = TextStyle(
-    fontFamily: "KronaOne",
+    fontFamily: FontFamilies.kronaOne,
     fontSize: 24,
     color: AppColors.onContainerVariant,
   );
   static const titleSmall = TextStyle(
-    fontFamily: "Inter",
+    fontFamily: FontFamilies.inter,
     fontSize: 18,
     color: AppColors.onBackground,
   );
   static const titleMedium = TextStyle(
-    fontFamily: "Inter",
+    fontFamily: FontFamilies.inter,
     fontSize: 24,
     color: AppColors.onBackground,
   );
   static const subtitleMedium = TextStyle(
-    fontFamily: "Inter",
+    fontFamily: FontFamilies.inter,
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: AppColors.onContainerVariant,
   );
   static const bodySmall = TextStyle(
-    fontFamily: "Inter",
+    fontFamily: FontFamilies.inter,
     fontSize: 14,
     color: AppColors.onContainer,
   );
@@ -71,7 +76,7 @@ ThemeData theme() {
   return ThemeData(
     brightness: Brightness.dark,
     colorScheme: colorScheme,
-    fontFamily: "Inter",
+    fontFamily: FontFamilies.inter,
     appBarTheme: AppBarThemeData(
       backgroundColor: AppColors.background,
       elevation: 0,
