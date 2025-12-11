@@ -66,6 +66,8 @@ abstract class TextStyles {
 ThemeData theme() {
   final colorScheme = ColorScheme.dark(
     primary: AppColors.container,
+    secondary: AppColors.container,
+    onSecondary: AppColors.onContainer,
     onPrimary: AppColors.onContainer,
     surface: AppColors.background,
     surfaceContainer: AppColors.container,
