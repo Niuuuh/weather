@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:weather/core/routing/navigation_helper.dart';
 
 import '../providers/location_providers.dart';
+import 'current_location_list_tile.dart';
 import 'location_list_tile.dart';
 
 class LocationListView extends ConsumerWidget {
@@ -13,9 +14,16 @@ class LocationListView extends ConsumerWidget {
     final locations = ref.watch(locationsProvider);
     return ListView.separated(
       padding: EdgeInsets.all(20),
-      itemCount: locations.length,
+      itemCount: locations.length + 1,
       itemBuilder: (context, index) {
-        final location = locations[index];
+        if (index == 0) {
+          return CurrentLocationListTile(
+            onTap: (location) {
+              context.goLocationDetail(location: location);
+            },
+          );
+        }
+        final location = locations[index - 1];
         return LocationListTile(
           location: location,
           onTap: () {

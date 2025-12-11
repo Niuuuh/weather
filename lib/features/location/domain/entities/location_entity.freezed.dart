@@ -93,11 +93,11 @@ extension LocationEntityPatterns on LocationEntity {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( CurrentLocationEntity value)?  current,TResult Function( StaticLocationEntity value)?  static,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( DynamicLocationEntity value)?  dynamic,TResult Function( StaticLocationEntity value)?  static,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case CurrentLocationEntity() when current != null:
-return current(_that);case StaticLocationEntity() when static != null:
+case DynamicLocationEntity() when dynamic != null:
+return dynamic(_that);case StaticLocationEntity() when static != null:
 return static(_that);case _:
   return orElse();
 
@@ -116,11 +116,11 @@ return static(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( CurrentLocationEntity value)  current,required TResult Function( StaticLocationEntity value)  static,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( DynamicLocationEntity value)  dynamic,required TResult Function( StaticLocationEntity value)  static,}){
 final _that = this;
 switch (_that) {
-case CurrentLocationEntity():
-return current(_that);case StaticLocationEntity():
+case DynamicLocationEntity():
+return dynamic(_that);case StaticLocationEntity():
 return static(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
@@ -135,11 +135,11 @@ return static(_that);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( CurrentLocationEntity value)?  current,TResult? Function( StaticLocationEntity value)?  static,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( DynamicLocationEntity value)?  dynamic,TResult? Function( StaticLocationEntity value)?  static,}){
 final _that = this;
 switch (_that) {
-case CurrentLocationEntity() when current != null:
-return current(_that);case StaticLocationEntity() when static != null:
+case DynamicLocationEntity() when dynamic != null:
+return dynamic(_that);case StaticLocationEntity() when static != null:
 return static(_that);case _:
   return null;
 
@@ -157,10 +157,10 @@ return static(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( double latitude,  double longitude)?  current,TResult Function( double latitude,  double longitude,  String id,  String name)?  static,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( double latitude,  double longitude)?  dynamic,TResult Function( double latitude,  double longitude,  String id,  String name)?  static,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case CurrentLocationEntity() when current != null:
-return current(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
+case DynamicLocationEntity() when dynamic != null:
+return dynamic(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
 return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
   return orElse();
 
@@ -179,10 +179,10 @@ return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( double latitude,  double longitude)  current,required TResult Function( double latitude,  double longitude,  String id,  String name)  static,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( double latitude,  double longitude)  dynamic,required TResult Function( double latitude,  double longitude,  String id,  String name)  static,}) {final _that = this;
 switch (_that) {
-case CurrentLocationEntity():
-return current(_that.latitude,_that.longitude);case StaticLocationEntity():
+case DynamicLocationEntity():
+return dynamic(_that.latitude,_that.longitude);case StaticLocationEntity():
 return static(_that.latitude,_that.longitude,_that.id,_that.name);}
 }
 /// A variant of `when` that fallback to returning `null`
@@ -197,10 +197,10 @@ return static(_that.latitude,_that.longitude,_that.id,_that.name);}
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( double latitude,  double longitude)?  current,TResult? Function( double latitude,  double longitude,  String id,  String name)?  static,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( double latitude,  double longitude)?  dynamic,TResult? Function( double latitude,  double longitude,  String id,  String name)?  static,}) {final _that = this;
 switch (_that) {
-case CurrentLocationEntity() when current != null:
-return current(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
+case DynamicLocationEntity() when dynamic != null:
+return dynamic(_that.latitude,_that.longitude);case StaticLocationEntity() when static != null:
 return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
   return null;
 
@@ -212,8 +212,8 @@ return static(_that.latitude,_that.longitude,_that.id,_that.name);case _:
 /// @nodoc
 
 
-class CurrentLocationEntity with DiagnosticableTreeMixin implements LocationEntity {
-  const CurrentLocationEntity({required this.latitude, required this.longitude});
+class DynamicLocationEntity with DiagnosticableTreeMixin implements LocationEntity {
+  const DynamicLocationEntity({required this.latitude, required this.longitude});
   
 
 @override final  double latitude;
@@ -223,19 +223,19 @@ class CurrentLocationEntity with DiagnosticableTreeMixin implements LocationEnti
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$CurrentLocationEntityCopyWith<CurrentLocationEntity> get copyWith => _$CurrentLocationEntityCopyWithImpl<CurrentLocationEntity>(this, _$identity);
+$DynamicLocationEntityCopyWith<DynamicLocationEntity> get copyWith => _$DynamicLocationEntityCopyWithImpl<DynamicLocationEntity>(this, _$identity);
 
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
-    ..add(DiagnosticsProperty('type', 'LocationEntity.current'))
+    ..add(DiagnosticsProperty('type', 'LocationEntity.dynamic'))
     ..add(DiagnosticsProperty('latitude', latitude))..add(DiagnosticsProperty('longitude', longitude));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CurrentLocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DynamicLocationEntity&&(identical(other.latitude, latitude) || other.latitude == latitude)&&(identical(other.longitude, longitude) || other.longitude == longitude));
 }
 
 
@@ -244,15 +244,15 @@ int get hashCode => Object.hash(runtimeType,latitude,longitude);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'LocationEntity.current(latitude: $latitude, longitude: $longitude)';
+  return 'LocationEntity.dynamic(latitude: $latitude, longitude: $longitude)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $CurrentLocationEntityCopyWith<$Res> implements $LocationEntityCopyWith<$Res> {
-  factory $CurrentLocationEntityCopyWith(CurrentLocationEntity value, $Res Function(CurrentLocationEntity) _then) = _$CurrentLocationEntityCopyWithImpl;
+abstract mixin class $DynamicLocationEntityCopyWith<$Res> implements $LocationEntityCopyWith<$Res> {
+  factory $DynamicLocationEntityCopyWith(DynamicLocationEntity value, $Res Function(DynamicLocationEntity) _then) = _$DynamicLocationEntityCopyWithImpl;
 @override @useResult
 $Res call({
  double latitude, double longitude
@@ -263,17 +263,17 @@ $Res call({
 
 }
 /// @nodoc
-class _$CurrentLocationEntityCopyWithImpl<$Res>
-    implements $CurrentLocationEntityCopyWith<$Res> {
-  _$CurrentLocationEntityCopyWithImpl(this._self, this._then);
+class _$DynamicLocationEntityCopyWithImpl<$Res>
+    implements $DynamicLocationEntityCopyWith<$Res> {
+  _$DynamicLocationEntityCopyWithImpl(this._self, this._then);
 
-  final CurrentLocationEntity _self;
-  final $Res Function(CurrentLocationEntity) _then;
+  final DynamicLocationEntity _self;
+  final $Res Function(DynamicLocationEntity) _then;
 
 /// Create a copy of LocationEntity
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? latitude = null,Object? longitude = null,}) {
-  return _then(CurrentLocationEntity(
+  return _then(DynamicLocationEntity(
 latitude: null == latitude ? _self.latitude : latitude // ignore: cast_nullable_to_non_nullable
 as double,longitude: null == longitude ? _self.longitude : longitude // ignore: cast_nullable_to_non_nullable
 as double,

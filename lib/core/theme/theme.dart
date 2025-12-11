@@ -35,10 +35,15 @@ abstract class TextStyles {
     fontSize: 24,
     color: AppColors.onContainerVariant,
   );
+  static const titleSmall = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 18,
+    color: AppColors.onBackground,
+  );
   static const titleMedium = TextStyle(
     fontFamily: "Inter",
     fontSize: 24,
-    color: AppColors.onContainer,
+    color: AppColors.onBackground,
   );
   static const subtitleMedium = TextStyle(
     fontFamily: "Inter",
@@ -46,10 +51,17 @@ abstract class TextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.onContainerVariant,
   );
+  static const bodySmall = TextStyle(
+    fontFamily: "Inter",
+    fontSize: 14,
+    color: AppColors.onContainer,
+  );
 }
 
 ThemeData theme() {
   final colorScheme = ColorScheme.dark(
+    primary: AppColors.container,
+    onPrimary: AppColors.onContainer,
     surface: AppColors.background,
     surfaceContainer: AppColors.container,
     onSurface: AppColors.onBackground,

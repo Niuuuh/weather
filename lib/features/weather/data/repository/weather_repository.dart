@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:weather/features/weather/data/models/current_weather_parameters_model.dart';
 
 import '../../domain/entities/weather_entity.dart';
-import '../../domain/errors/weather_error.dart';
+import '../../domain/errors/weather_errors.dart';
 import '../models/hourly_weather_parameters_model.dart';
 import '../sources/weather_api.dart';
 
@@ -25,7 +25,7 @@ class WeatherRepository {
       return model.toEntity();
     } catch (e) {
       if (kDebugMode) rethrow;
-      throw WeatherError();
+      throw GenericWeatherError();
     }
   }
 
@@ -45,7 +45,7 @@ class WeatherRepository {
       return model.toEntity();
     } catch (e) {
       if (kDebugMode) rethrow;
-      throw WeatherError();
+      throw GenericWeatherError();
     }
   }
 }

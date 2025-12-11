@@ -60,7 +60,7 @@ class LocationListTile extends ConsumerWidget {
                       children: [
                         Text(
                           location.map(
-                            current: (_) => "Current Location",
+                            dynamic: (_) => "Current Location",
                             static: (staticLocation) => staticLocation.name,
                           ),
                           style: TextStyles.titleMedium,

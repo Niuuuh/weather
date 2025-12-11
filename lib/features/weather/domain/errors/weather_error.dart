@@ -1,1 +1,0 @@
-class WeatherError extends Error {}

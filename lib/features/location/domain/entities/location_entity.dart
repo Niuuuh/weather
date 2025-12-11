@@ -5,10 +5,10 @@ part 'location_entity.freezed.dart';
 
 @freezed
 sealed class LocationEntity with _$LocationEntity {
-  const factory LocationEntity.current({
+  const factory LocationEntity.dynamic({
     required double latitude,
     required double longitude,
-  }) = CurrentLocationEntity;
+  }) = DynamicLocationEntity;
 
   const factory LocationEntity.static({
     required double latitude,

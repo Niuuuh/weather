@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:weather/features/location/data/locations.dart';
+import 'package:weather/features/location/data/sources/locations.dart';
 import 'package:weather/features/weather/data/repository/weather_repository.dart';
 import 'package:weather/features/weather/data/sources/weather_api.dart';
 

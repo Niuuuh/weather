@@ -49,12 +49,12 @@ abstract class WeatherEmojiMapper {
     }
 
     // fog
-    if (condition == WeatherConditionEntity.fog || visibility < 1000) {
+    if (condition == WeatherConditionEntity.fog || visibility < 700) {
       return '🌫️';
     }
 
     // wind
-    if (windSpeed >= 15 || windGustSpeed >= 15) {
+    if (windSpeed >= 20 || windGustSpeed >= 15) {
       return '💨';
     }
 

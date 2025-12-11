@@ -5,4 +5,4 @@ import '../theme/theme.dart';
 
 final routerProvider = Provider((ref) => router());
 
-final themeProvider = Provider((ref) => theme());
+final themeProvider = Provider.autoDispose((ref) => theme());

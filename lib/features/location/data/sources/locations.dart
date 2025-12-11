@@ -1,4 +1,4 @@
-import '../domain/entities/location_entity.dart';
+import '../../domain/entities/location_entity.dart';
 
 abstract class Locations {
   static const karlsruhe = LocationEntity.static(
@@ -14,9 +14,4 @@ abstract class Locations {
     latitude: 49.238079936490124,
     longitude: 6.981651366745441,
   );
-
-  static const values = [
-    karlsruhe,
-    saarbruecken,
-  ];
 }

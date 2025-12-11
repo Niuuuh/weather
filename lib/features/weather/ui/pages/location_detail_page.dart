@@ -27,7 +27,7 @@ class LocationDetailPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final location = locationId != null
         ? ref.watch(locationProvider(locationId!))
-        : LocationEntity.current(latitude: latitude, longitude: longitude);
+        : LocationEntity.dynamic(latitude: latitude, longitude: longitude);
 
     final asyncWeather = ref.watch(currentWeatherProvider(location));
 
@@ -40,7 +40,7 @@ class LocationDetailPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: location.map(
-          current: (_) => Text("Current Location"),
+          dynamic: (_) => Text("Current Location"),
           static: (staticLocation) => Text(staticLocation.name),
         ),
       ),
